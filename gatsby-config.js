@@ -48,7 +48,7 @@ module.exports = {
         // baseUrl: `gmdlccdummy.test`,
         // protocol: `http`,
         
-        baseUrl: `http://adminstage.gmdlcc.com`,
+        baseUrl: `http://admin.gmdlcc.com`,
         protocol: `http`,
         
         // auth: {
