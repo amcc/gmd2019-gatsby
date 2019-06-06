@@ -10,7 +10,7 @@ export const HeaderOffsetMobile = "61";
 
 export const Accent = `#5e6b79`;
 // export const SubtleAccent = `#f5f7f9`;
-export const SubtleAccent = `gold`;
+export const SubtleAccent = `#ff5001`;
 
 const BoxShadowH = `0px`;
 const BoxShadowV = `3px`;
@@ -44,6 +44,7 @@ export const GlobalStyle = props => (
       body {
         margin: 0;
         background: #fefefe;
+        overflow-x:hidden;
       }
       h1 {
         font-weight: 600;
@@ -144,6 +145,9 @@ export const GridBoxContainer = css`
   > div:active {
     background: ${SubtleAccent};
   }
+  a:hover{
+    color: white;
+  }
   transition: all 0.5s;
 `;
 export const GridBox = css`
@@ -179,6 +183,7 @@ export const GridHeader = css`
   padding: ${rhythm(1 / 4)} ;
   font-weight: 400;
   margin-bottom: 0;
+  
   @media (min-width: 40em) {
     font-size: ${GridHeaderSize};
     padding: ${rhythm(1 / 3)};

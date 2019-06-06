@@ -5,7 +5,13 @@ import { Location } from "@reach/router"; // to get the location
 import Headroom from "react-headroom"; // https://kyleamathews.github.io/react-headroom/
 import { css } from "@emotion/core"; // https://github.com/gatsbyjs/gatsby/blob/master/examples/using-emotion/src/pages/index.js
 import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
-import { Accent, SubtleAccent, HeaderOffset, HeaderOffsetMobile, MainWrapper } from "../utils/styles";
+import {
+  Accent,
+  SubtleAccent,
+  HeaderOffset,
+  HeaderOffsetMobile,
+  MainWrapper
+} from "../utils/styles";
 // import { rhythm } from "../utils/typography";
 
 const headerScaler = 45;
@@ -76,8 +82,8 @@ const navBar = css`
     padding: 10px 10px;
     @media (min-width: 40em) {
       padding: 20px 10px;
-      width: ${headerScaler*1.2}px;
-      height: ${headerScaler*1.4}px;
+      width: ${headerScaler * 1.2}px;
+      height: ${headerScaler * 1.4}px;
       top: 5px;
       right: 23px;
     }
@@ -241,11 +247,11 @@ const sidebarListItem = css`
   font-size: 80%;
   font-weight: 400;
   /* text-decoration: underline; */
-  a:hover > div{
+  a:hover > div {
     color: white;
     background: ${Accent};
   }
-  a:active > div{
+  a:active > div {
     color: white;
     background: ${Accent};
   }
@@ -322,7 +328,6 @@ const Header = class extends React.Component {
                       >
                         XIX
                       </span>
-                      
                     </Link>
                   </h1>
                 </Box>
@@ -338,11 +343,6 @@ const Header = class extends React.Component {
                   {/* Half width */}
                   <nav css={navBar}>
                     <ul css={menuList}>
-                      <li css={menuListItem}>
-                        <Link to="/projects" activeStyle={{ color: "grey" }}>
-                          Projects
-                        </Link>
-                      </li>
                       <li css={menuListItem}>
                         <Link to="/students" activeStyle={{ color: "grey" }}>
                           Students
@@ -371,19 +371,6 @@ const Header = class extends React.Component {
                     </label>
                     <div id="sidebarMenu">
                       <ul className="sidebarMenuInner">
-                        <li css={sidebarListItem}>
-                          <Link
-                            to="/projects"
-                            css={css`
-                              color: black;
-                              text-decoration: none;
-                            `}
-                            onClick={() => this.unCheck("sidebarToggle")}
-                            activeStyle={{ color: "lightgrey" }}
-                          >
-                            <div css={sidebarlink}>Projects</div>
-                          </Link>
-                        </li>
                         <li css={sidebarListItem}>
                           <Link
                             to="/students"

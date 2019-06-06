@@ -45,11 +45,11 @@ module.exports = {
          */
         // The protocol. This can be http or https.
 
-        baseUrl: `gmdlccdummy.test`,
-        protocol: `http`,
+        // baseUrl: `gmdlccdummy.test`,
+        // protocol: `http`,
         
-        // baseUrl: `maux.mcclymont.co`,
-        // protocol: `https`,
+        baseUrl: `http://adminstage.gmdlcc.com`,
+        protocol: `http`,
         
         // auth: {
         //   htaccess_user: process.env.WP_USERNAME,
@@ -95,8 +95,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://maux.netlify.com",
-        sitemap: "https://maux.netlify.com/sitemap.xml",
+        host: "https://gmdlcc2019.netlify.com",
+        sitemap: "https://gmdlcc2019.netlify.com/sitemap.xml",
         env: {
           development: {
             policy: [{ userAgent: "*", disallow: ["/"] }]

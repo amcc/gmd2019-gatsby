@@ -64,13 +64,17 @@ class PostTemplate extends Component {
             `}
           >
             <Box width={[1]} px={[0]} key={`post-image`}>
-              {/* {post.featured_media && (
+              {post.acf.featured_image && post.acf.featured_image.localFile && (
                 <Img
-                  // css={{ marginBottom: rhythm(1) }}
-                  key={post.featured_media.localFile.childImageSharp.fluid.src}
-                  fluid={post.featured_media.localFile.childImageSharp.fluid}
+                  // css={{ marginBottom: rhythm(1 / 2) }}
+                  key={
+                    post.acf.featured_image.localFile.childImageSharp.fluid.src
+                  }
+                  fluid={
+                    post.acf.featured_image.localFile.childImageSharp.fluid
+                  }
                 />
-              )} */}
+              )}
             </Box>
           </Flex>
 
@@ -117,6 +121,18 @@ export const pageQuery = graphql`
       title
       content
       excerpt
+      acf {
+        featured_image {
+          source_url
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 680) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
     }
     site {
       siteMetadata {
