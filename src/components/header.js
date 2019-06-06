@@ -326,7 +326,22 @@ const Header = class extends React.Component {
                           }
                         `}
                       >
-                        XIX
+                        {`{`}
+                      </span>
+                      <span>Salon XIX</span>
+                      <span
+                        css={css`
+                          color: ${SubtleAccent};
+                          padding: 0 2px 0 2px;
+                          /* top: -3px; */
+                          font-weight: 400;
+                          position: relative;
+                          @media (min-width: 40em) {
+                            padding: 0 5px 0 6px;
+                          }
+                        `}
+                      >
+                        {`}`}
                       </span>
                     </Link>
                   </h1>

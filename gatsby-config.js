@@ -7,8 +7,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `MA:UX`,
-    subtitle: `Data fetched from a site hosted on wordpress.com`
+    title: `Graphic Media Design {Salon XIX}`,
+    subtitle: `Graphic Media Design {Salon XIX}`
   },
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
