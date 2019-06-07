@@ -45,6 +45,7 @@ export const GlobalStyle = props => (
         margin: 0;
         background: #fefefe;
         overflow-x:hidden;
+-webkit-overflow-scrolling: touch;
       }
       h1 {
         font-weight: 600;
