@@ -131,8 +131,26 @@ class Home extends Component {
         >
           <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`}>
             <h2 ref={this.myDivToFocus} css={GridSectionHeader}>
-             Portfolios
+             Graphic Media Design
             </h2>
+<p>
+London College 
+of Communication 
+
+Elephant & Castle 
+London SE1 6SB 
+
+Directions → Private View 
+
+Wednesday 19 June 
+6 – 9pm General Access 
+
+Thursday 20 – 
+Saturday 22 June 
+
+Thur - Fri: 11am – 7pm 
+Sat: 11am – 4pm
+</p>
           </Box>
 
           {data.allWordpressPost.edges.map(({ node }) => (
