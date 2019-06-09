@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       <>
         <GlobalStyle />
         <Helmet
-          title={`MA:UX`}
+          title={`GMD`}
           meta={[{ name: "description", content: "MA User Experience Design" }]}
         />
         <Header siteTitle={data.site.siteMetadata.title} />

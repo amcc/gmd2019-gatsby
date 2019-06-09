@@ -33,7 +33,7 @@ class PostTemplate extends Component {
     return (
       <Layout>
         <Helmet
-          title={`MA:UX | ${post.title}`}
+          title={`GMD | ${post.title}`}
           meta={[{ name: "description", content: post.content }]}
         />
         <PostMain css={MarginTopPost}>
