@@ -364,8 +364,8 @@ const Header = class extends React.Component {
                         </Link>
                       </li>
                       <li css={menuListItem}>
-                        <Link to="/about" activeStyle={{ color: "grey" }}>
-                          About
+                        <Link to="/info" activeStyle={{ color: "grey" }}>
+                          Info
                         </Link>
                       </li>
                     </ul>
@@ -401,7 +401,7 @@ const Header = class extends React.Component {
                         </li>
                         <li css={sidebarListItem}>
                           <Link
-                            to="/about"
+                            to="/info"
                             css={css`
                               color: black;
                               text-decoration: none;
@@ -409,7 +409,7 @@ const Header = class extends React.Component {
                             onClick={() => this.unCheck("sidebarToggle")}
                             activeStyle={{ color: "lightgrey" }}
                           >
-                            <div css={sidebarlink}>About</div>
+                            <div css={sidebarlink}>Info</div>
                           </Link>
                         </li>
                       </ul>
