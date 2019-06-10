@@ -10,67 +10,21 @@ import { css } from "@emotion/core"; // https://github.com/gatsbyjs/gatsby/blob/
 import { FaChevronDown } from "react-icons/fa";
 import { rhythm } from "../utils/typography";
 import styled from "@emotion/styled";
+import HomeBanner from "../components/homeBanner"
 import {
   GridBoxContainer,
   GridSectionHeader,
   GridBox,
-  GridHeader
+  GridHeader,
+  PaddedMobile
 } from "../utils/styles";
+
 // import smoothscroll from 'smoothscroll-polyfill';
 
 const HeroContainer = styled.div`
   position: relative;
 `;
-const HeroStyles = css``;
-const HeroTextOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  height: 100%;
-`;
-const HeroTextOverlayInner = styled.div`
-  height: 60%;
-  width: 100%;
-  color: white;
-  a {
-    color: white;
-  }
-  margin-top: 3vw;
-  padding: ${rhythm(1 / 2)} ${rhythm(1 / 2)} ${rhythm(1 / 2)} ${rhythm(1 / 2)};
-  font-size: 90%;
-  font-weight: 300;
-  h1 {
-    /* font-size: 160%; */
-    color: white;
-  }
-  mix-blend-mode: difference;
 
-  @media (min-width: 40em) {
-    padding: ${rhythm(1 / 2)} 20vw 0 0;
-    font-size: 150%;
-    h1 {
-      font-size: 150%;
-    }
-    h3 {
-      padding-left: 0;
-    }
-  }
-  @media (min-width: 52em) {
-    padding: ${rhythm(1 / 2)} 20vw 0 0;
-    h1 {
-      font-size: 160%;
-    }
-    font-size: 150%;
-  }
-  @media (min-width: 64em) {
-    padding: ${rhythm(1 / 2)} 30vw 0 0;
-    font-size: 160%;
-    h1 {
-      font-size: 180%;
-      font-weight: 300;
-    }
-  }
-`;
 const DownArrow = styled.div`
   /* height: 30%; */
   text-align: center;
@@ -85,6 +39,7 @@ const DownArrowButton = css`
   cursor: pointer;
   height: 100%;
 `;
+
 
 class Home extends Component {
   constructor(props) {
@@ -120,7 +75,18 @@ class Home extends Component {
 
     return (
       <Layout>
-        
+        <HeroContainer>
+          {/* <HeroThree /> */}
+          <HomeBanner />
+          
+          <DownArrow>
+            <FaChevronDown
+              // size={40}
+              css={DownArrowButton}
+              onClick={this.handleOnClick}
+            />
+          </DownArrow>
+        </HeroContainer>
 
         <Flex
           // mx={[0, -1, -2]}
@@ -130,27 +96,7 @@ class Home extends Component {
           `}
         >
           <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`}>
-            <h2 ref={this.myDivToFocus} css={GridSectionHeader}>
-             Graphic Media Design
-            </h2>
-<p>
-London College 
-of Communication 
-
-Elephant & Castle 
-London SE1 6SB 
-
-Directions → Private View 
-
-Wednesday 19 June 
-6 – 9pm General Access 
-
-Thursday 20 – 
-Saturday 22 June 
-
-Thur - Fri: 11am – 7pm 
-Sat: 11am – 4pm
-</p>
+            
           </Box>
 
           {data.allWordpressPost.edges.map(({ node }) => (

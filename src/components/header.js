@@ -173,7 +173,7 @@ const navBar = css`
     }
     transform: translateX(120vw);
     transition: transform 200ms ease-in-out;
-    background: linear-gradient(180deg, #fff 0%, #ccc 100%);
+    background: ${SubtleAccent};
   }
 
   .sidebarMenuInner {
@@ -295,9 +295,9 @@ const Header = class extends React.Component {
           // onUnpin={() => console.log("unpinned")}
           // wrapperStyle={{ marginBottom: rhythm(1) }}
           style={{
-            background: "rgb(255,255,255)",
-            boxShadow: "1px 1px 15px rgba(0,0,0,0.1)",
-            zIndex: 1000
+            background: SubtleAccent,
+            // boxShadow: "1px 1px 15px rgba(0,0,0,0.1)",
+            zIndex: 1000,
           }}
         >
           <header css={headerHeight}>
@@ -328,7 +328,7 @@ const Header = class extends React.Component {
                       >
                         {`{`}
                       </span>
-                      <span>Salon XIX</span>
+                      <span>XIX</span>
                       <span
                         css={css`
                           color: ${SubtleAccent};

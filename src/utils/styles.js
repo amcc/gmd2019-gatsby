@@ -44,8 +44,7 @@ export const GlobalStyle = props => (
       body {
         margin: 0;
         background: #fefefe;
-        overflow-x:hidden;
--webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
       }
       h1 {
         font-weight: 600;
@@ -109,7 +108,7 @@ export const PostTitleItems = styled.div`
 export const TitleMeta = css`
   color: gold;
   margin-right: ${rhythm(1)};
-`
+`;
 
 export const Padded = css`
   padding: 0 ${rhythm(1)};
@@ -132,7 +131,6 @@ export const FullWidth = styled.div`
 `;
 
 export const MarginTopPost = css`
-
   margin-top: ${rhythm(3)};
   @media (min-width: 40em) {
     margin-top: ${rhythm(3)};
@@ -146,7 +144,7 @@ export const GridBoxContainer = css`
   > div:active {
     background: ${SubtleAccent};
   }
-  a:hover{
+  a:hover {
     color: white;
   }
   transition: all 0.5s;
@@ -181,15 +179,14 @@ export const GridBox = css`
 `;
 export const GridHeader = css`
   font-size: ${GridHeaderSizeMobile};
-  padding: ${rhythm(1 / 4)} ;
+  padding: ${rhythm(1 / 4)};
   font-weight: 400;
   margin-bottom: 0;
-  
+
   @media (min-width: 40em) {
     font-size: ${GridHeaderSize};
     padding: ${rhythm(1 / 3)};
   }
-  
 `;
 export const GridSectionHeader = css`
   /* margin-bottom: 0; */
