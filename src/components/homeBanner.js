@@ -115,22 +115,25 @@ const Bracket = styled.div`
   position: fixed;
   right: 5vw;
   z-index: 0;
-  font-size: 620px;
+  font-size: 400px;
   font-family: "nb_internationalbold", Helvetica, sans-serif;
+  @media (min-width: 40em) {
+    font-size: 620px;
+  }
 `;
 const Salon = styled.div`
   position: absolute;
   /* mix-blend-mode: difference; */
   z-index: 100;
-  bottom: 25vh;
+  bottom: 44.5vh;
   font-weight: 200;
 
   font-family: "nb_internationalbold", Helvetica, sans-serif;
   /* width: 80%; */
   color: black;
-  font-size: 12em;
+  font-size: 7em;
   line-height: 0.8em;
-  margin-left: 20vw;
+  margin-left: 0vw;
   span {
     display: block;
     
@@ -138,6 +141,11 @@ const Salon = styled.div`
   .xix{
       margin-left: 14vw;
     }
+    @media (min-width: 40em) {
+      font-size: 12em;
+      margin-left: 20vw;
+      bottom: 25vh;
+  }
 `;
 const HomeBanner = ({ text }) => {
   return (
