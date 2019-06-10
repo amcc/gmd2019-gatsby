@@ -19,7 +19,7 @@ alton.overrideThemeStyles = () => {
 
 alton.baseFontSize = "16px"
 // alton.baseLineHeight = 1
-alton.headerFontFamily = ['Lato', 'sans-serif']
+alton.headerFontFamily = ['nb_internationalbold', 'sans-serif']
 // fairyGateTheme.bodyFontFamily = ['Dosis', 'sans-serif']
 // alton.googleFonts = [
 //   {

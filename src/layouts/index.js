@@ -8,6 +8,7 @@ import Footer from "../components/footer";
 import { css } from "@emotion/core";
 // import styled from "@emotion/styled";
 import { GlobalStyle, MainWrapper } from "../utils/styles";
+
 // import './all.sass'
 // Using css with a template literal
 const main = css`

@@ -127,6 +127,10 @@ class Info extends Component {
       London College of Communication Elephant & Castle London SE1 6SB Directions → Private View Wednesday 19 June 6 – 9pm General Access Thursday 20 – Saturday 22 June Thur - Fri: 11am – 7pm Sat: 11am – 4pm
         
       </p>
+      <h2>Previous years work:</h2>
+      <p><a href="http://2018.gmdlcc.com">2018</a></p>
+      <p><a href="http://2017.gmdlcc.com">2017</a></p>
+      <p><a href="http://2016.gmdlcc.com">2016</a></p>
         
       </Layout>
     );

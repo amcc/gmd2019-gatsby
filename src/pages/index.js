@@ -93,6 +93,8 @@ class Home extends Component {
           flexWrap="wrap"
           css={css`
             margin-top: ${rhythm(2)};
+            position: relative;
+            z-index: 2;
           `}
         >
           <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`}>
@@ -150,7 +152,7 @@ export const pageQuery = graphql`
               source_url
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 680) {
+                  fluid(maxWidth: 680,, quality: 90) {
                     ...GatsbyImageSharpFluid
                   }
                 }

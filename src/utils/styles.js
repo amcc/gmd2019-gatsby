@@ -3,6 +3,23 @@ import Img from "gatsby-image";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/core";
 import { rhythm } from "../utils/typography";
+import {
+  NBInternationalBoldEOT,
+  NBInternationalBoldEOTIE,
+  NBInternationalBoldTTF,
+  NBInternationalBoldWOFF,
+  NBInternationalBoldWOFF2,
+  NBInternationalLightEOT,
+  NBInternationalLightEOTIE,
+  NBInternationalLightTTF,
+  NBInternationalLightWOFF,
+  NBInternationalLightWOFF2,
+  NBInternationalMonoEOT,
+  NBInternationalMonoEOTIE,
+  NBInternationalMonoTTF,
+  NBInternationalMonoWOFF,
+  NBInternationalMonoWOFF2
+} from "./fonts";
 
 const MaxWidth = `1400px`;
 export const HeaderOffset = "70";
@@ -31,48 +48,73 @@ const GridHeaderSizeMobile = `90%`;
 
 // rebass grid breakpoints
 // 40em, 52em, 64em
-export const GlobalStyle = props => (
-  <Global
-    {...props}
-    styles={css`
-      html,
-      body {
-        /* the above makes scrolling screw up on iphone */
-        /* -webkit-overflow-scrolling: touch; */
-        height: 100%;
-      }
-      body {
-        margin: 0;
-        background: #fefefe;
-        -webkit-overflow-scrolling: touch;
-      }
-      h1 {
-        font-weight: 600;
-        font-size: 220%;
-      }
-      h2 {
-        font-weight: 600;
-        font-size: 150%;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
+export const GlobalStyle = props => {
+  console.log(NBInternationalBoldEOT);
+  return (
+    <Global
+      {...props}
+      styles={css`
+        @font-face {
+          font-family: "nb_internationalbold";
+          src: url(${NBInternationalBoldEOT});
+          src: url(${NBInternationalBoldEOTIE}) format("embedded-opentype"),
+            url(${NBInternationalBoldWOFF2}) format("woff2"),
+            url(${NBInternationalBoldWOFF}) format("woff"),
+            url(${NBInternationalBoldTTF}) format("truetype");
+          font-weight: normal;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: "nb_internationalmono";
+          src: url(${NBInternationalMonoEOT});
+          src: url(${NBInternationalMonoEOTIE}) format("embedded-opentype"),
+            url(${NBInternationalMonoWOFF2}) format("woff2"),
+            url(${NBInternationalMonoWOFF}) format("woff"),
+            url(${NBInternationalMonoTTF}) format("truetype");
+          font-weight: normal;
+          font-style: normal;
+        }
 
-      /* iphones will zoom when clicking on a select - this might solve it */
-      /* Mobile first */
-      input,
-      textarea,
-      select,
-      button {
-        font-size: 16px;
-      }
-      /* Tablet upwards */
-      @media (min-width: 768px) {
-        font-size: 14px;
-      }
-    `}
-  />
-);
+        html,
+        body {
+          /* the above makes scrolling screw up on iphone */
+          /* -webkit-overflow-scrolling: touch; */
+          height: 100%;
+          font-family: "nb_internationalmono", times, Helvetica, sans-serif;
+        }
+        body {
+          margin: 0;
+          background: #fefefe;
+          -webkit-overflow-scrolling: touch;
+        }
+        h1 {
+          font-weight: 600;
+          font-size: 220%;
+        }
+        h2 {
+          font-weight: 600;
+          font-size: 150%;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+
+        /* iphones will zoom when clicking on a select - this might solve it */
+        /* Mobile first */
+        input,
+        textarea,
+        select,
+        button {
+          font-size: 16px;
+        }
+        /* Tablet upwards */
+        @media (min-width: 768px) {
+          font-size: 14px;
+        }
+      `}
+    />
+  );
+};
 
 export const StyledImg = styled(Img)`
   max-width: 100%;

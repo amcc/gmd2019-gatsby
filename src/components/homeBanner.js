@@ -19,6 +19,7 @@ const CustomHeroImage = styled.div`
   /* width: auto; */
   background: ${SubtleAccent};
   height: 100vh;
+  z-index: -2;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   margin-top: -${HeaderOffsetMobile}px;
@@ -108,7 +109,7 @@ const Bracket = styled.div`
   /* margin-left: -8px; */
   position: fixed;
   right: 5vw;
-  z-index: 0;
+  z-index: -1;
   font-size: 820px;
 `;
 const Salon = styled.div`
