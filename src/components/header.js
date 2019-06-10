@@ -188,7 +188,7 @@ const navBar = css`
     /* font-weight: 300; */
     /* padding: 20px; */
     cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
     text-align: center;
   }
   .sidebarMenuInner li span {
@@ -260,7 +260,7 @@ const sidebarListItem = css`
 const sidebarlink = css`
   /* background: green; */
   padding: 25px 0;
-  color: ${Accent};
+  color: white;
 `;
 
 // let currentLocation;

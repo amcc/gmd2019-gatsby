@@ -10,7 +10,8 @@ import {
   HeaderOffset,
   HeaderOffsetMobile,
   PaddedMobile,
-  SubtleAccent
+  SubtleAccent,
+  MainWrapper
 } from "../utils/styles";
 
 import { rhythm } from "../utils/typography";
@@ -54,19 +55,19 @@ const HeroTextOverlayInner = styled.div`
   }
   margin-top: 3vw;
   padding: ${rhythm(1 / 2)} ${rhythm(1 / 2)} ${rhythm(1 / 2)} ${rhythm(1 / 2)};
-  font-size: 90%;
+  font-size: 1em;
   font-weight: 300;
   h1 {
-    /* font-size: 160%; */
+    font-size: 1em;
     color: white;
   }
   /* mix-blend-mode: difference; */
 
   @media (min-width: 40em) {
     padding: ${rhythm(1 / 2)} 20vw 0 0;
-    font-size: 150%;
+    /* font-size: 150%; */
     h1 {
-      font-size: 150%;
+      font-size: 1em;
     }
     h3 {
       padding-left: 0;
@@ -75,15 +76,15 @@ const HeroTextOverlayInner = styled.div`
   @media (min-width: 52em) {
     padding: ${rhythm(1 / 2)} 20vw 0 0;
     h1 {
-      font-size: 160%;
+      font-size: 1em;
     }
-    font-size: 150%;
+    /* font-size: 1em; */
   }
   @media (min-width: 64em) {
     padding: ${rhythm(1 / 2)} 30vw 0 0;
-    font-size: 160%;
+    /* font-size: 1em; */
     h1 {
-      font-size: 180%;
+      font-size: 1em;
       font-weight: 300;
     }
   }
@@ -91,7 +92,7 @@ const HeroTextOverlayInner = styled.div`
 
 const HomeTitle = css`
   /* font-weight: 400; */
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   /* text-align: center; */
 `;
 
@@ -101,31 +102,47 @@ const Graphic = css`
 const Show = css`
   display: block;
 `;
+const Info = css`
+  display: block;
+  margin-top: ${rhythm(1)};
+`;
 
 const Bracket = styled.div`
   position: fixed;
   color: #fff;
-  top: -20vh;
+  top: 5vh;
   /* margin-left: -8px; */
   position: fixed;
   right: 5vw;
-  z-index: -1;
-  font-size: 820px;
+  z-index: 0;
+  font-size: 620px;
+  font-family: "nb_internationalbold", Helvetica, sans-serif;
 `;
 const Salon = styled.div`
   position: absolute;
   /* mix-blend-mode: difference; */
   z-index: 100;
-  bottom: 50vh;
+  bottom: 25vh;
   font-weight: 200;
+
+  font-family: "nb_internationalbold", Helvetica, sans-serif;
   /* width: 80%; */
   color: black;
-  font-size: 8em;
+  font-size: 12em;
+  line-height: 0.8em;
+  margin-left: 20vw;
+  span {
+    display: block;
+    
+  }
+  .xix{
+      margin-left: 14vw;
+    }
 `;
 const HomeBanner = ({ text }) => {
   return (
     <CustomHeroImage>
-      <section>
+      <MainWrapper>
         <HeroTextOverlay
           css={css`
             /* mix-blend-mode: difference; */
@@ -137,16 +154,20 @@ const HomeBanner = ({ text }) => {
                 <h1 css={HomeTitle}>
                   <span css={Graphic}>Graphic and Media Design</span>
                   <span css={Show}>Degree Show 2019</span>
+                  <span css={Info}>London College
+of Communication<br />
+
+Wednesday 19 June</span>
                 </h1>
               </Box>
             </Flex>
           </HeroTextOverlayInner>
           <Salon css={PaddedMobile}>
-            <h2>Salon XIX</h2>
+            <span class="salon">Salon</span> <span class="xix">XIX</span>
           </Salon>
         </HeroTextOverlay>
         <Bracket>&#123;</Bracket>
-      </section>
+      </MainWrapper>
     </CustomHeroImage>
   );
 };

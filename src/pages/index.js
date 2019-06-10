@@ -10,7 +10,7 @@ import { css } from "@emotion/core"; // https://github.com/gatsbyjs/gatsby/blob/
 import { FaChevronDown } from "react-icons/fa";
 import { rhythm } from "../utils/typography";
 import styled from "@emotion/styled";
-import HomeBanner from "../components/homeBanner"
+import HomeBanner from "../components/homeBanner";
 import {
   GridBoxContainer,
   GridSectionHeader,
@@ -26,11 +26,17 @@ const HeroContainer = styled.div`
 `;
 
 const DownArrow = styled.div`
+width: 100%;
+  position: absolute;
+  z-index: 100;
+  bottom: 10vh;
+  margin: 0 auto;
   /* height: 30%; */
   text-align: center;
   font-size: 270%;
   @media (min-width: 40em) {
     font-size: 400%;
+    bottom: 5vh;
   }
 `;
 const DownArrowButton = css`
@@ -39,7 +45,6 @@ const DownArrowButton = css`
   cursor: pointer;
   height: 100%;
 `;
-
 
 class Home extends Component {
   constructor(props) {
@@ -78,7 +83,7 @@ class Home extends Component {
         <HeroContainer>
           {/* <HeroThree /> */}
           <HomeBanner />
-          
+
           <DownArrow>
             <FaChevronDown
               // size={40}
@@ -96,10 +101,9 @@ class Home extends Component {
             position: relative;
             z-index: 2;
           `}
+          ref={this.myDivToFocus}
         >
-          <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`}>
-            
-          </Box>
+          <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`} />
 
           {data.allWordpressPost.edges.map(({ node }) => (
             <Box
@@ -110,17 +114,20 @@ class Home extends Component {
             >
               <div css={GridBox} key={node.slug}>
                 <Link to={`/${node.slug}`} css={{ textDecoration: `none` }}>
-                  {node.acf.featured_image && node.acf.featured_image.localFile && (
-                    <Img
-                      // css={{ marginBottom: rhythm(1 / 2) }}
-                      key={
-                        node.acf.featured_image.localFile.childImageSharp.fluid.src
-                      }
-                      fluid={
-                        node.acf.featured_image.localFile.childImageSharp.fluid
-                      }
-                    />
-                  )}
+                  {node.acf.featured_image &&
+                    node.acf.featured_image.localFile && (
+                      <Img
+                        // css={{ marginBottom: rhythm(1 / 2) }}
+                        key={
+                          node.acf.featured_image.localFile.childImageSharp
+                            .fluid.src
+                        }
+                        fluid={
+                          node.acf.featured_image.localFile.childImageSharp
+                            .fluid
+                        }
+                      />
+                    )}
                   <h3 css={GridHeader}>{node.title}</h3>
                 </Link>
 
@@ -140,10 +147,10 @@ export default Home;
 // Set here the ID of the home page.
 export const pageQuery = graphql`
   query {
-    
-    allWordpressPost(sort: { fields: [date] }) {
+    allWordpressPost(filter: {wordpress_id: {ne: 17035}}, sort: { fields: [date] }) {
       edges {
         node {
+          wordpress_id
           title
           excerpt
           slug
@@ -152,7 +159,7 @@ export const pageQuery = graphql`
               source_url
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 680,, quality: 90) {
+                  fluid(maxWidth: 680, quality: 90) {
                     ...GatsbyImageSharpFluid
                   }
                 }

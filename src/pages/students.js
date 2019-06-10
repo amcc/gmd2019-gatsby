@@ -175,7 +175,7 @@ export default Students;
 export const pageQuery = graphql`
   query {
     
-    allWordpressPost(sort: { fields: [date] }) {
+    allWordpressPost(filter: {wordpress_id: {ne: 17035}}, sort: { fields: [date] }) {
       edges {
         node {
           title
