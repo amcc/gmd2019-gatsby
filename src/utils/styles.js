@@ -21,7 +21,7 @@ import {
   NBInternationalMonoWOFF2
 } from "./fonts";
 
-const MaxWidth = `1400px`;
+const MaxWidth = `1600px`;
 export const HeaderOffset = "70";
 export const HeaderOffsetMobile = "61";
 
