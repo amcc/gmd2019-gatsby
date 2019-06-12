@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 // import PostIcons from "../components/post-icons"
 import Layout from "../layouts"
 
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
 
 class PageTemplate extends Component {
   render() {

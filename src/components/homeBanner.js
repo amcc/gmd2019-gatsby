@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 // import { rhythm } from "../utils/typography"
 import styled from "@emotion/styled";
@@ -147,7 +146,7 @@ const Salon = styled.div`
       bottom: 25vh;
   }
 `;
-const HomeBanner = ({ text }) => {
+const HomeBanner = () => {
   return (
     <CustomHeroImage>
       <MainWrapper>
@@ -171,7 +170,7 @@ Wednesday 19 June</span>
             </Flex>
           </HeroTextOverlayInner>
           <Salon css={PaddedMobile}>
-            <span class="salon">Salon</span> <span class="xix">XIX</span>
+            <span className="salontext">Salon</span> <span className="xix">XIX</span>
           </Salon>
         </HeroTextOverlay>
         <Bracket>&#123;</Bracket>

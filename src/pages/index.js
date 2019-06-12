@@ -13,10 +13,10 @@ import styled from "@emotion/styled";
 import HomeBanner from "../components/homeBanner";
 import {
   GridBoxContainer,
-  GridSectionHeader,
+  // GridSectionHeader,
   GridBox,
   GridHeader,
-  PaddedMobile
+  // PaddedMobile
 } from "../utils/styles";
 
 // import smoothscroll from 'smoothscroll-polyfill';

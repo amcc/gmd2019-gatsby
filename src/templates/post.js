@@ -15,15 +15,15 @@ import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/
 import { css } from "@emotion/core"; // https://github.com/gatsbyjs/gatsby/blob/master/examples/using-emotion/src/pages/index.js
 // import styled from "@emotion/styled";
 import {
-  MainWrapper,
-  FullWidth,
-  Padded,
+  // MainWrapper,
+  // FullWidth,
+  // Padded,
   PaddedMobile,
   PostMain,
   PostTitleItems,
   MarginTopPost,
-  BoxShadow,
-  SubtleAccent
+  // BoxShadow,
+  // SubtleAccent
 } from "../utils/styles";
 
 export const ProjectStyle = css`
@@ -59,7 +59,7 @@ class PostTemplate extends Component {
             )}
             {post.acf.website_url && (
               <Box width={1} px={[0, 1, 2]} key={`post-website`}>
-                <a href={post.acf.website_url.url} target="_blank">
+                <a href={post.acf.website_url.url} target="_blank" rel="noopener noreferrer">
                   {post.acf.website_url.title}
                 </a>
               </Box>
@@ -95,6 +95,7 @@ class PostTemplate extends Component {
                 flexDirection="row"
                 py={2}
                 css={ProjectStyle}
+                key={i}
               >
                 <Box width={1} px={[2, 2]} key={`title-${i}`}>
                   <h3
@@ -115,16 +116,7 @@ class PostTemplate extends Component {
                 <Box width={1} px={[0, 2]} key={`post-images-${i}`}>
                   {project.images_video &&
                     project.images_video.map((media, i) => {
-                      // const img = picture.image.localFile.childImageSharp.fluid;
-                      // return (
-                      //   <div key={`${i} image-gallery`}>
-                      //     <Img
-                      //       css={{ marginBottom: rhythm(1) }}
-                      //       key={img.src}
-                      //       fluid={img}
-                      //     />
-                      //   </div>
-                      // );
+
                       if (media.vimeo_link || media.youtube_link) {
                         let video;
                         if (media.vimeo_link) {
@@ -139,8 +131,7 @@ class PostTemplate extends Component {
                             key={`video-${i}`}
                           />
                         );
-                      }
-                      if (media.project_image) {
+                      } else if (media.project_image) {
                         const img =
                           media.project_image.localFile.childImageSharp.fluid;
                         return (
@@ -152,6 +143,8 @@ class PostTemplate extends Component {
                             />
                           </div>
                         );
+                      } else {
+                        return false
                       }
                     })}
                 </Box>
@@ -210,7 +203,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1920, quality: 90) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   }
                 }
               }
