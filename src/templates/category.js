@@ -1,24 +1,17 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
+// import { FaRegClock } from "react-icons/fa";
 // import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
+// import Img from "gatsby-image";
 import Layout from "../layouts";
 //import PostIcons from "../components/post-icons";
 import { css } from "@emotion/core"; // https://github.com/gatsbyjs/gatsby/blob/master/examples/using-emotion/src/pages/index.js
 // import HeroImage from "../components/heroimage";
-
 import styled from "@emotion/styled";
-import HomeBanner from "../components/homeBanner";
+// import HomeBanner from "../components/homeBanner";
 import StudentGrid from "../components/studentGrid";
 import StudentList from "../components/studentList";
 import CategoryList from "../components/categoryList";
-// import {
-//   GridBoxContainer,
-//   GridSectionHeader,
-//   GridBox,
-//   GridHeader,
-//   PaddedMobile
-//   // PaddedMobile
-// } from "../utils/styles";
 
 // import smoothscroll from 'smoothscroll-polyfill';
 
@@ -26,7 +19,9 @@ const HeroContainer = styled.div`
   position: relative;
 `;
 
-
+const Categories = css`
+  font: 14px "nb_internationalbold";
+`;
 const StudentNames = css`
   display: block;
   @media (min-width: 40em) {
@@ -40,20 +35,19 @@ const ProjectBoxes = css`
   }
 `;
 
-class Home extends Component {
-
+class PageTemplate extends Component {
   render() {
     const posts = this.props.data.allWordpressPost;
+    const category = this.props.data.wordpressCategory;
     const categories = this.props.data.allWordpressCategory;
+
     return (
       <Layout>
-        <HeroContainer>
-          {/* <HeroThree /> */}
+        {/* <HeroContainer>
           <HomeBanner />
-        </HeroContainer>
-
+        </HeroContainer> */}
         <div>
-          <CategoryList categories={categories} />
+          <CategoryList categories={categories} catId={category.id} />
         </div>
 
         <div css={ProjectBoxes}>
@@ -67,15 +61,16 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default PageTemplate;
 
-// Set here the ID of the home page.
 export const pageQuery = graphql`
-  query {
-    allWordpressPost(
-      filter: { wordpress_id: { ne: 17035 } }
-      sort: { fields: [date] }
-    ) {
+  query($id: String!) {
+    wordpressCategory(id: { eq: $id }) {
+      id
+      name
+      slug
+    }
+    allWordpressPost(filter: {wordpress_id: {ne: 17035}, categories: {elemMatch: {id: {eq: $id}}}}, sort: {fields: [date]}) {
       edges {
         node {
           wordpress_id
@@ -105,7 +100,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allWordpressCategory(filter: { name: { ne: "Uncategorised" } }) {
+    allWordpressCategory(filter: {name: {ne: "Uncategorised"}}) {
       edges {
         node {
           id

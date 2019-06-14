@@ -39,6 +39,15 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWordpressCategory(filter: {name: {ne: "Uncategorised"}}) {
+        edges {
+          node {
+            id
+            name
+            slug
+          }
+        }
+      }
     }
   `);
 
@@ -51,8 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const {
     allWordpressPage,
     allWordpressPost,
-    allWordpressWpCompetency,
-    allWordpressWpStudent
+    allWordpressCategory
   } = result.data;
 
   const pageTemplate = path.resolve(`./src/templates/page.js`);
@@ -84,6 +92,20 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/${edge.node.slug}/`,
       component: slash(postTemplate),
+      context: {
+        id: edge.node.id
+      }
+    });
+  });
+
+  const categoryTemplate = path.resolve(`./src/templates/category.js`);
+  // We want to create a detailed page for each
+  // post node. We'll just use the WordPress Slug for the slug.
+  // The Post ID is prefixed with 'POST_'
+  allWordpressCategory.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.slug}/`,
+      component: slash(categoryTemplate),
       context: {
         id: edge.node.id
       }

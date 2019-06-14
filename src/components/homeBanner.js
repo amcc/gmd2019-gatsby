@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 // import { rhythm } from "../utils/typography"
 import styled from "@emotion/styled";
@@ -10,7 +9,6 @@ import {
   HeaderOffset,
   HeaderOffsetMobile,
   PaddedMobile,
-  SubtleAccent,
   MainWrapper
 } from "../utils/styles";
 

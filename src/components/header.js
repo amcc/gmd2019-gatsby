@@ -27,11 +27,11 @@ const homeTitle = css`
   line-height: 18px;
   margin: 0.1 0 0 0 em;
   padding-top: 0.5rem;
-  xfont-size: 200%;
+  font-size: 200%;
   @media (min-width: 40em) {
     font-size: 200%;
     padding-left: 0;
-    padding-top: 1.4rem;
+    padding-top: 0.8rem;
   }
   a {
     text-decoration: none;

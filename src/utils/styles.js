@@ -17,7 +17,7 @@ import {
 } from "./fonts";
 
 const MaxWidth = `1400px`;
-export const HeaderOffset = "70";
+export const HeaderOffset = "80";
 export const HeaderOffsetMobile = "61";
 
 export const Accent = `#5e6b79`;

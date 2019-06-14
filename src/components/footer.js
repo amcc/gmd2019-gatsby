@@ -24,10 +24,6 @@ const FooterInner = styled.div`
   }
 `;
 
-const homeTitle = css`
-  padding: 2rem 0;
-  margin: 2rem 0;
-`;
 
 const navBar = css`
   /* float: right; */
