@@ -211,9 +211,9 @@ export const GridBox = css`
     text-decoration: none;
   }
 `;
+
 export const GridHeader = css`
   font-size: ${GridHeaderSizeMobile};
-  padding: ${rhythm(1 / 4)};
   font-weight: 400;
   margin-bottom: 0;
   padding-top: ${rhythm(1 / 2)};
