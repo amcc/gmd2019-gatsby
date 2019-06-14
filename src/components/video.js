@@ -1,5 +1,21 @@
 import React from "react"
 
+const VideoStyle = css`
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+
+ iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+   }
+`;
+
+
 const Video = ({ videoSrcURL, videoTitle, ...props }) => {
   // console.log(videoSrcURL)
   //https://stackoverflow.com/questions/25661182/embed-youtube-video-refused-to-display-in-a-frame-because-it-set-x-frame-opti
@@ -28,7 +44,7 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => {
   }
 
   return (
-    <div className="video">
+    <div css={VideoStyle}>
       <iframe
         src={`${source}${videoCodeFinal}`}
         title={videoTitle}
