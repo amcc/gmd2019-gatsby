@@ -9,14 +9,6 @@ import {
   NBInternationalBoldTTF,
   NBInternationalBoldWOFF,
   NBInternationalBoldWOFF2,
-<<<<<<< Updated upstream
-  NBInternationalLightEOT,
-  NBInternationalLightEOTIE,
-  NBInternationalLightTTF,
-  NBInternationalLightWOFF,
-  NBInternationalLightWOFF2,
-=======
->>>>>>> Stashed changes
   NBInternationalMonoEOT,
   NBInternationalMonoEOTIE,
   NBInternationalMonoTTF,

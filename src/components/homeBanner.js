@@ -136,14 +136,10 @@ const HomeBanner = ({ text }) => {
             </Flex>
           </HeroTextOverlayInner>
           <Salon css={PaddedMobile}>
-<<<<<<< Updated upstream
-            <span class="salon">Salon</span> <span class="xix">XIX</span>
-=======
             <span>
               &#123;<span />
             </span>
             <span className="salontext">Salon XIX</span>
->>>>>>> Stashed changes
           </Salon>
         </HeroTextOverlay>
       </MainWrapper>

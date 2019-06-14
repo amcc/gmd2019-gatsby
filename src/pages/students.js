@@ -18,7 +18,7 @@ import {
 } from "../utils/styles";
 // import smoothscroll from 'smoothscroll-polyfill';
 
-<<<<<<< Updated upstream
+
 const HeroContainer = styled.div`
   position: relative;
 `;
@@ -72,23 +72,7 @@ const HeroTextOverlayInner = styled.div`
     }
   }
 `;
-const DownArrow = styled.div`
-  /* height: 30%; */
-  text-align: center;
-  font-size: 270%;
-  @media (min-width: 40em) {
-    font-size: 400%;
-  }
-`;
-const DownArrowButton = css`
-  color: white;
-  /* opacity: 0.8; */
-  cursor: pointer;
-  height: 100%;
-`;
 
-=======
->>>>>>> Stashed changes
 class Students extends Component {
   constructor(props) {
     super(props);
