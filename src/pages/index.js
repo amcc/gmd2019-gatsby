@@ -15,8 +15,13 @@ import {
   GridBoxContainer,
   GridSectionHeader,
   GridBox,
+<<<<<<< Updated upstream
   GridHeader,
   PaddedMobile
+=======
+  GridHeader
+  // PaddedMobile
+>>>>>>> Stashed changes
 } from "../utils/styles";
 
 // import smoothscroll from 'smoothscroll-polyfill';
@@ -156,12 +161,17 @@ export const pageQuery = graphql`
               source_url
               localFile {
                 childImageSharp {
+<<<<<<< Updated upstream
+                  fluid(maxWidth: 680, quality: 90) {
+                    ...GatsbyImageSharpFluid
+=======
                   fluid(
                     maxWidth: 680
                     quality: 90
                     traceSVG: { color: "#ff5001" }
                   ) {
                     ...GatsbyImageSharpFluid_tracedSVG
+>>>>>>> Stashed changes
                   }
                 }
               }

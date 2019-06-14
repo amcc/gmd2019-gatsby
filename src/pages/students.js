@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { Link, graphql } from "gatsby";
+// import { FaRegClock } from "react-icons/fa";
 import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
-
+import Img from "gatsby-image";
 import Layout from "../layouts";
+//import PostIcons from "../components/post-icons";
 import { css } from "@emotion/core"; // https://github.com/gatsbyjs/gatsby/blob/master/examples/using-emotion/src/pages/index.js
-
+// import HeroImage from "../components/heroimage";
+import { FaChevronDown } from "react-icons/fa";
 import { rhythm } from "../utils/typography";
-// import styled from "@emotion/styled";
+import styled from "@emotion/styled";
 import {
   GridBoxContainer,
   GridSectionHeader,
@@ -15,7 +18,7 @@ import {
 } from "../utils/styles";
 // import smoothscroll from 'smoothscroll-polyfill';
 
-
+<<<<<<< Updated upstream
 const HeroContainer = styled.div`
   position: relative;
 `;
@@ -69,7 +72,23 @@ const HeroTextOverlayInner = styled.div`
     }
   }
 `;
+const DownArrow = styled.div`
+  /* height: 30%; */
+  text-align: center;
+  font-size: 270%;
+  @media (min-width: 40em) {
+    font-size: 400%;
+  }
+`;
+const DownArrowButton = css`
+  color: white;
+  /* opacity: 0.8; */
+  cursor: pointer;
+  height: 100%;
+`;
 
+=======
+>>>>>>> Stashed changes
 class Students extends Component {
   constructor(props) {
     super(props);
