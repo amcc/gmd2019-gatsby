@@ -129,7 +129,7 @@ const HomeBanner = ({ text }) => {
             <Flex>
               <Box>
                 <h1 css={HomeTitle}>
-                  <span css={Info}>London College of Communication</span>
+                  <span css={Info}>London College <br/> of Communication</span>
                   <span css={Info}>19 - 22 June</span>
                 </h1>
               </Box>
