@@ -9,11 +9,6 @@ import {
   NBInternationalBoldTTF,
   NBInternationalBoldWOFF,
   NBInternationalBoldWOFF2,
-  // NBInternationalLightEOT,
-  // NBInternationalLightEOTIE,
-  // NBInternationalLightTTF,
-  // NBInternationalLightWOFF,
-  // NBInternationalLightWOFF2,
   NBInternationalMonoEOT,
   NBInternationalMonoEOTIE,
   NBInternationalMonoTTF,
@@ -21,12 +16,11 @@ import {
   NBInternationalMonoWOFF2
 } from "./fonts";
 
-const MaxWidth = `1600px`;
+const MaxWidth = `1400px`;
 export const HeaderOffset = "70";
 export const HeaderOffsetMobile = "61";
 
 export const Accent = `#5e6b79`;
-// export const SubtleAccent = `#f5f7f9`;
 export const SubtleAccent = `#ff5001`;
 
 const BoxShadowH = `0px`;
@@ -49,6 +43,7 @@ const GridHeaderSizeMobile = `90%`;
 // rebass grid breakpoints
 // 40em, 52em, 64em
 export const GlobalStyle = props => {
+  console.log(NBInternationalBoldEOT);
   return (
     <Global
       {...props}
@@ -81,6 +76,7 @@ export const GlobalStyle = props => {
           height: 100%;
           font-family: "nb_internationalmono", Helvetica, sans-serif;
         }
+
         body {
           margin: 0;
           background: #fefefe;
@@ -94,8 +90,18 @@ export const GlobalStyle = props => {
           font-weight: 600;
           font-size: 150%;
         }
+
+        h3 {
+          font-weight: 600;
+          font-size: 100%;
+        }
+
+        h3:hover {
+          color: ${SubtleAccent};
+        }
+
         a:hover {
-          text-decoration: underline;
+          text-decoration: none;
         }
 
         /* iphones will zoom when clicking on a select - this might solve it */
@@ -117,13 +123,8 @@ export const GlobalStyle = props => {
 
 export const StyledImg = styled(Img)`
   max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
+  margin: 0;
+  padding: 0;
   margin-bottom: 1.45rem;
 `;
 
@@ -178,27 +179,14 @@ export const MarginTopPost = css`
   }
 `;
 
-export const GridBoxContainer = css`
-  > div:hover {
-    background: ${SubtleAccent};
-  }
-  > div:active {
-    background: ${SubtleAccent};
-  }
-  a:hover {
-    color: white;
-  }
-  transition: all 0.5s;
-`;
 export const GridBox = css`
   overflow: hidden;
   margin: 0 auto;
   max-width: 960px;
-  /* padding: 0.5rem 0; */
-  margin-bottom: ${rhythm(2)};
-  background: white;
-  /* ${BoxShadow}; */
-  ${BorderRadius};
+  height: 350px;
+  margin-bottom: ${rhythm(1)};
+  padding: ${rhythm(1 / 2)};
+  border: 1px solid #ececec;
   a > div {
     height: 120px;
     @media (min-width: 40em) {
@@ -211,22 +199,22 @@ export const GridBox = css`
       height: 230px;
     }
   }
-  h3 {
-    
-  }
   a {
     text-decoration: none;
   }
 `;
+
 export const GridHeader = css`
   font-size: ${GridHeaderSizeMobile};
-  padding: ${rhythm(1 / 4)};
   font-weight: 400;
   margin-bottom: 0;
+  padding-top: ${rhythm(1 / 2)};
+  padding-bottom: ${rhythm(1 / 4)};
 
   @media (min-width: 40em) {
     font-size: ${GridHeaderSize};
-    padding: ${rhythm(1 / 3)};
+    padding-top: ${rhythm(1 / 2)};
+    padding-bottom: ${rhythm(1 / 4)};
   }
 `;
 export const GridSectionHeader = css`

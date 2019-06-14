@@ -28,7 +28,6 @@ const HeroBgImage = ({ image }) => (
     css={css`
       background: url("${image.src}");
       /* height: 400px; */
-      
       object-fit: cover;
     `}
   >

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 // import { rhythm } from "../utils/typography"
 import styled from "@emotion/styled";
@@ -17,7 +18,7 @@ import { rhythm } from "../utils/typography";
 
 const CustomHeroImage = styled.div`
   /* width: auto; */
-  background: ${SubtleAccent};
+  background: white;
   height: 100vh;
   z-index: -2;
   margin-left: calc(50% - 50vw);
@@ -95,58 +96,27 @@ const HomeTitle = css`
   /* text-align: center; */
 `;
 
-const Graphic = css`
-  display: block;
-`;
-const Show = css`
-  display: block;
-`;
 const Info = css`
+  font-family: "nb_internationalmono";
+  letter-spacing: -0.025em;
   display: block;
+  color: black;
   margin-top: ${rhythm(1)};
 `;
 
-const Bracket = styled.div`
-  position: fixed;
-  color: #fff;
-  top: 5vh;
-  /* margin-left: -8px; */
-  position: fixed;
-  right: 5vw;
-  z-index: 0;
-  font-size: 400px;
-  font-family: "nb_internationalbold", Helvetica, sans-serif;
-  @media (min-width: 40em) {
-    font-size: 620px;
-  }
-`;
 const Salon = styled.div`
-  position: absolute;
-  /* mix-blend-mode: difference; */
-  z-index: 100;
-  bottom: 44.5vh;
-  font-weight: 200;
-
   font-family: "nb_internationalbold", Helvetica, sans-serif;
-  /* width: 80%; */
   color: black;
   font-size: 7em;
   line-height: 0.8em;
-  margin-left: 0vw;
-  span {
-    display: block;
-    
-  }
-  .xix{
-      margin-left: 14vw;
-    }
-    @media (min-width: 40em) {
-      font-size: 12em;
-      margin-left: 20vw;
-      bottom: 25vh;
+
+  @media (min-width: 40em) {
+    font-size: 14em;
+    margin-left: 10vw;
+    bottom: 25vh;
   }
 `;
-const HomeBanner = () => {
+const HomeBanner = ({ text }) => {
   return (
     <CustomHeroImage>
       <MainWrapper>
@@ -157,23 +127,21 @@ const HomeBanner = () => {
         >
           <HeroTextOverlayInner>
             <Flex>
-              <Box px={2}>
+              <Box>
                 <h1 css={HomeTitle}>
-                  <span css={Graphic}>Graphic and Media Design</span>
-                  <span css={Show}>Degree Show 2019</span>
-                  <span css={Info}>London College
-of Communication<br />
-
-Wednesday 19 June</span>
+                  <span css={Info}>London College <br/> of Communication</span>
+                  <span css={Info}>19 - 22 June</span>
                 </h1>
               </Box>
             </Flex>
           </HeroTextOverlayInner>
           <Salon css={PaddedMobile}>
-            <span className="salontext">Salon</span> <span className="xix">XIX</span>
+            <span>
+              &#123;<span />
+            </span>
+            <span className="salontext">Salon XIX</span>
           </Salon>
         </HeroTextOverlay>
-        <Bracket>&#123;</Bracket>
       </MainWrapper>
     </CustomHeroImage>
   );

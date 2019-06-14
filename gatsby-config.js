@@ -92,20 +92,20 @@ module.exports = {
         omitGoogleFont: true
       }
     },
-    // {
-    //   resolve: "gatsby-plugin-robots-txt",
-    //   options: {
-    //     host: "https://gmdlcc2019.netlify.com",
-    //     sitemap: "https://gmdlcc2019.netlify.com/sitemap.xml",
-    //     env: {
-    //       development: {
-    //         policy: [{ userAgent: "*", disallow: ["/"] }]
-    //       },
-    //       production: {
-    //         policy: [{ userAgent: "*", disallow: "/" }]
-    //       }
-    //     }
-    //   }
-    // }
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://gmdlcc2019.netlify.com",
+        sitemap: "https://gmdlcc2019.netlify.com/sitemap.xml",
+        env: {
+          development: {
+            policy: [{ userAgent: "*", disallow: ["/"] }]
+          },
+          production: {
+            policy: [{ userAgent: "*", disallow: "/" }]
+          }
+        }
+      }
+    }
   ]
 };
