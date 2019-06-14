@@ -8,7 +8,7 @@ alton.overrideThemeStyles = () => {
   return {
     a: {
       color: `black`,
-      textDecoration: `underline`,
+      textDecoration: `none`,
     },
     h1: {
       lineHeight: 1,
@@ -17,7 +17,7 @@ alton.overrideThemeStyles = () => {
   }
 }
 
-alton.baseFontSize = "16px"
+alton.baseFontSize = "18px"
 // alton.baseLineHeight = 1
 alton.headerFontFamily = ['nb_internationalbold', 'sans-serif']
 // fairyGateTheme.bodyFontFamily = ['Dosis', 'sans-serif']

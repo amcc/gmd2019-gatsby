@@ -24,12 +24,10 @@ const headerHeight = css`
 `;
 const homeTitle = css`
   transition: all 0.3s;
-  /* float: left; */
-  font-weight: 300;
-  margin: 0;
-  padding-left: 0.8rem;
+  line-height: 18px;
+  margin: 0.1 0 0 0 em;
   padding-top: 0.5rem;
-  font-size: 200%;
+  xfont-size: 200%;
   @media (min-width: 40em) {
     font-size: 200%;
     padding-left: 0;
@@ -40,6 +38,7 @@ const homeTitle = css`
   }
   a:hover {
     text-decoration: none;
+    color: ${SubtleAccent};
   }
 `;
 
@@ -224,13 +223,15 @@ const menuListItem = css`
   display: inline;
   margin: 0;
   a {
+    font: 18px "nb_internationalbold";
     color: black;
-    /* text-align: center; */
-    /* padding: 16px; */
     text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: 0.1s ease-in-out;
   }
   a:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid ${SubtleAccent};
+    color: ${SubtleAccent};
   }
   a:active {
     color: ${Accent};
@@ -246,7 +247,6 @@ const menuListItem = css`
 const sidebarListItem = css`
   font-size: 80%;
   font-weight: 400;
-  /* text-decoration: underline; */
   a:hover > div {
     color: white;
     background: ${Accent};
@@ -258,7 +258,6 @@ const sidebarListItem = css`
 `;
 
 const sidebarlink = css`
-  /* background: green; */
   padding: 25px 0;
   color: white;
 `;
@@ -291,13 +290,9 @@ const Header = class extends React.Component {
           }}
         </Location>
         <Headroom
-          // onPin={() => console.log("pinned")}
-          // onUnpin={() => console.log("unpinned")}
-          // wrapperStyle={{ marginBottom: rhythm(1) }}
           style={{
-            background: SubtleAccent,
-            // boxShadow: "1px 1px 15px rgba(0,0,0,0.1)",
-            zIndex: 1000,
+            background: "#fff",
+            zIndex: 1000
           }}
         >
           <header css={headerHeight}>
@@ -305,17 +300,19 @@ const Header = class extends React.Component {
               <Flex flexWrap="wrap">
                 <Box width={[1, 2 / 6]}>
                   {/* Half width */}
-                  <h1 css={homeTitle}>
+                  <h3 css={homeTitle}>
                     <Link
                       to="/"
                       css={css`
                         color: black;
+                        font-size: 18px;
                       `}
                     >
                       {/* {this.props.siteTitle} */}
-                      GMD
+                      Graphic and Media Design <br />
+                      Degree Show 2019
                     </Link>
-                  </h1>
+                  </h3>
                 </Box>
                 <Box
                   width={[1, 4 / 6]}

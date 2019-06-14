@@ -15,8 +15,13 @@ import {
   GridBoxContainer,
   GridSectionHeader,
   GridBox,
+<<<<<<< Updated upstream
   GridHeader,
   PaddedMobile
+=======
+  GridHeader
+  // PaddedMobile
+>>>>>>> Stashed changes
 } from "../utils/styles";
 
 // import smoothscroll from 'smoothscroll-polyfill';
@@ -25,25 +30,8 @@ const HeroContainer = styled.div`
   position: relative;
 `;
 
-const DownArrow = styled.div`
-width: 100%;
-  position: absolute;
-  z-index: 100;
-  bottom: 10vh;
-  margin: 0 auto;
-  /* height: 30%; */
-  text-align: center;
-  font-size: 270%;
-  @media (min-width: 40em) {
-    font-size: 400%;
-    bottom: 5vh;
-  }
-`;
-const DownArrowButton = css`
-  color: white;
-  /* opacity: 0.8; */
-  cursor: pointer;
-  height: 100%;
+const Categories = css`
+  font: 14px "nb_internationalbold";
 `;
 
 class Home extends Component {
@@ -77,20 +65,12 @@ class Home extends Component {
 
   render() {
     const data = this.props.data;
-
+    console.table(data);
     return (
       <Layout>
         <HeroContainer>
           {/* <HeroThree /> */}
           <HomeBanner />
-
-          <DownArrow>
-            <FaChevronDown
-              // size={40}
-              css={DownArrowButton}
-              onClick={this.handleOnClick}
-            />
-          </DownArrow>
         </HeroContainer>
 
         <Flex
@@ -117,7 +97,6 @@ class Home extends Component {
                   {node.acf.featured_image &&
                     node.acf.featured_image.localFile && (
                       <Img
-                        // css={{ marginBottom: rhythm(1 / 2) }}
                         key={
                           node.acf.featured_image.localFile.childImageSharp
                             .fluid.src
@@ -129,6 +108,22 @@ class Home extends Component {
                       />
                     )}
                   <h3 css={GridHeader}>{node.title}</h3>
+                  {node.categories.map((category, i) => {
+                    let comma;
+                    if (i < node.categories.length - 1) {
+                      comma = `, `;
+                    } else {
+                      comma = ``;
+                    }
+                    if (category.name != "Uncategorised") {
+                      return (
+                        <span css={Categories} key={`category-${i}`}>
+                          {category.name}
+                          {comma}
+                        </span>
+                      );
+                    }
+                  })}
                 </Link>
 
                 {/* <div dangerouslySetInnerHTML={{ __html: node.excerpt }} /> */}
@@ -147,20 +142,36 @@ export default Home;
 // Set here the ID of the home page.
 export const pageQuery = graphql`
   query {
-    allWordpressPost(filter: {wordpress_id: {ne: 17035}}, sort: { fields: [date] }) {
+    allWordpressPost(
+      filter: { wordpress_id: { ne: 17035 } }
+      sort: { fields: [date] }
+    ) {
       edges {
         node {
           wordpress_id
           title
           excerpt
           slug
+          categories {
+            name
+            slug
+          }
           acf {
             featured_image {
               source_url
               localFile {
                 childImageSharp {
+<<<<<<< Updated upstream
                   fluid(maxWidth: 680, quality: 90) {
                     ...GatsbyImageSharpFluid
+=======
+                  fluid(
+                    maxWidth: 680
+                    quality: 90
+                    traceSVG: { color: "#ff5001" }
+                  ) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+>>>>>>> Stashed changes
                   }
                 }
               }

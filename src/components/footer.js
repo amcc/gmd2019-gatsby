@@ -5,12 +5,13 @@ import { css } from "@emotion/core"; // https://github.com/gatsbyjs/gatsby/blob/
 import styled from "@emotion/styled";
 import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
 // import { rhythm } from "../utils/typography";
+import { SubtleAccent } from "../utils/styles";
 
 const FooterInner = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1366px;
   padding: 1rem 1.0875rem;
-  background: black;
+  background: ${SubtleAccent};
   color: white;
   /* height: 5rem; */
   h1 {
@@ -36,33 +37,34 @@ const navBar = css`
 const Footer = ({ siteTitle }) => (
   <footer
     css={css`
-      background: black;
+      background: ${SubtleAccent};
     `}
   >
     <FooterInner>
       <Flex>
-        <Box width={1 / 3}>
-          {/* Half width */}
-          <h1 css={homeTitle}>
-            <Link
-              to="/"
-              css={css`
-                color: white;
-                text-decoration: none;
-              `}
-            >
-              {siteTitle}
-            </Link>
-          </h1>
+        <Box width={1 / 4}>
+          <p>
+            <Link to="/students">Students</Link>
+            <span>/</span>
+            <Link to="/info">Info</Link>
+          </p>
+          <p>London College of Communication</p>
+          <p>Elephant &amp; Castle London SE1 6SB </p>
+          <Link to="/info">Directions →</Link>
         </Box>
-        <Box
-          width={2 / 3}
-          css={css`
-            text-align: right;
-          `}
-        >
+        <Box width={1 / 4}>
           {/* Half width */}
           <nav css={navBar} />
+        </Box>
+
+        <Box width={1 / 4}>
+          <p>Private View</p>
+          <p>Wednesday 19 June 6-9 pm </p>
+        </Box>
+        <Box width={1 / 4}>
+          <p>General Access</p>
+          <p>Thursday 20 – Saturday 22 June</p>
+          <p>Thur - Fri: 11am – 7pm Sat: 11am – 4pm</p>
         </Box>
       </Flex>
     </FooterInner>

@@ -18,6 +18,7 @@ import {
 } from "../utils/styles";
 // import smoothscroll from 'smoothscroll-polyfill';
 
+<<<<<<< Updated upstream
 const HeroContainer = styled.div`
   position: relative;
 `;
@@ -86,6 +87,8 @@ const DownArrowButton = css`
   height: 100%;
 `;
 
+=======
+>>>>>>> Stashed changes
 class Students extends Component {
   constructor(props) {
     super(props);
@@ -120,8 +123,6 @@ class Students extends Component {
 
     return (
       <Layout>
-        
-
         <Flex
           // mx={[0, -1, -2]}
           flexWrap="wrap"
@@ -129,12 +130,6 @@ class Students extends Component {
             margin-top: ${rhythm(2)};
           `}
         >
-          <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`}>
-            <h2 ref={this.myDivToFocus} css={GridSectionHeader}>
-             Students
-            </h2>
-          </Box>
-
           {data.allWordpressPost.edges.map(({ node }) => (
             <Box
               width={[1 / 3, 1 / 4, 1 / 6]}
@@ -174,13 +169,19 @@ export default Students;
 // Set here the ID of the home page.
 export const pageQuery = graphql`
   query {
-    
-    allWordpressPost(filter: {wordpress_id: {ne: 17035}}, sort: { fields: [date] }) {
+    allWordpressPost(
+      filter: { wordpress_id: { ne: 17035 } }
+      sort: { fields: [date] }
+    ) {
       edges {
         node {
           title
           excerpt
           slug
+          categories {
+            name
+            slug
+          }
           acf {
             featured_image {
               source_url
