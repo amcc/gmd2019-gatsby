@@ -9,14 +9,6 @@ import {
   NBInternationalBoldTTF,
   NBInternationalBoldWOFF,
   NBInternationalBoldWOFF2,
-<<<<<<< Updated upstream
-  NBInternationalLightEOT,
-  NBInternationalLightEOTIE,
-  NBInternationalLightTTF,
-  NBInternationalLightWOFF,
-  NBInternationalLightWOFF2,
-=======
->>>>>>> Stashed changes
   NBInternationalMonoEOT,
   NBInternationalMonoEOTIE,
   NBInternationalMonoTTF,
@@ -24,7 +16,7 @@ import {
   NBInternationalMonoWOFF2
 } from "./fonts";
 
-const MaxWidth = `1400px`;
+const MaxWidth = `1600px`;
 export const HeaderOffset = "70";
 export const HeaderOffsetMobile = "61";
 
@@ -51,7 +43,6 @@ const GridHeaderSizeMobile = `90%`;
 // rebass grid breakpoints
 // 40em, 52em, 64em
 export const GlobalStyle = props => {
-  console.log(NBInternationalBoldEOT);
   return (
     <Global
       {...props}

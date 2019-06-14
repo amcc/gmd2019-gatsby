@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 // import { rhythm } from "../utils/typography"
 import styled from "@emotion/styled";
@@ -116,7 +115,7 @@ const Salon = styled.div`
     bottom: 25vh;
   }
 `;
-const HomeBanner = ({ text }) => {
+const HomeBanner = () => {
   return (
     <CustomHeroImage>
       <MainWrapper>
@@ -136,14 +135,10 @@ const HomeBanner = ({ text }) => {
             </Flex>
           </HeroTextOverlayInner>
           <Salon css={PaddedMobile}>
-<<<<<<< Updated upstream
-            <span class="salon">Salon</span> <span class="xix">XIX</span>
-=======
             <span>
-              &#123;<span />
+              &#123;
             </span>
             <span className="salontext">Salon XIX</span>
->>>>>>> Stashed changes
           </Salon>
         </HeroTextOverlay>
       </MainWrapper>
