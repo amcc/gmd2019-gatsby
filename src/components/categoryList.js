@@ -19,6 +19,10 @@ const CategoryListStyle = css`
       h3{
         color:${SubtleAccent};
       }
+
+      h3::after{
+        content: "{";
+      }
     }
     
   }

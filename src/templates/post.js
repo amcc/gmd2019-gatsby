@@ -21,7 +21,7 @@ import {
   PaddedMobile,
   PostMain,
   PostTitleItems,
-  MarginTopPost,
+  MarginTopPost
   // BoxShadow,
   // SubtleAccent
 } from "../utils/styles";
@@ -29,6 +29,7 @@ import {
 export const ProjectStyle = css`
   padding-top: ${rhythm(2)};
 `;
+
 
 class PostTemplate extends Component {
   render() {
@@ -41,6 +42,7 @@ class PostTemplate extends Component {
           title={`GMD | ${post.acf.display_name}`}
           meta={[{ name: "description", content: post.content }]}
         />
+
         <PostMain css={MarginTopPost}>
           <PostTitleItems css={PaddedMobile}>
             {post.acf.display_name && (
@@ -59,7 +61,11 @@ class PostTemplate extends Component {
             )}
             {post.acf.website_url && (
               <Box width={1} px={[0, 1, 2]} key={`post-website`}>
-                <a href={post.acf.website_url.url} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={post.acf.website_url.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {post.acf.website_url.title}
                 </a>
               </Box>
@@ -116,7 +122,6 @@ class PostTemplate extends Component {
                 <Box width={1} px={[0, 2]} key={`post-images-${i}`}>
                   {project.images_video &&
                     project.images_video.map((media, i) => {
-
                       if (media.vimeo_link || media.youtube_link) {
                         let video;
                         if (media.vimeo_link) {
@@ -144,7 +149,7 @@ class PostTemplate extends Component {
                           </div>
                         );
                       } else {
-                        return false
+                        return false;
                       }
                     })}
                 </Box>
@@ -203,12 +208,10 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(
-                    maxWidth: 1600, 
-                    quality: 90,
-                    traceSVG: {
-                      color: "#ff5001",
-                    },
-                    ) {
+                    maxWidth: 1600
+                    quality: 90
+                    traceSVG: { color: "#ff5001" }
+                  ) {
                     ...GatsbyImageSharpFluid_tracedSVG
                   }
                 }

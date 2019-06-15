@@ -227,6 +227,7 @@ const menuListItem = css`
     color: black;
     text-decoration: none;
     border-bottom: 2px solid transparent;
+
     transition: 0.1s ease-in-out;
   }
   a:hover {
@@ -234,7 +235,7 @@ const menuListItem = css`
     color: ${SubtleAccent};
   }
   a:active {
-    color: ${Accent};
+    color: ${SubtleAccent};
   }
   font-size: 114%;
   padding: 0.6rem 0.5rem 0.5rem 0rem;
