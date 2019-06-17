@@ -37,8 +37,11 @@ const Footer = ({ siteTitle }) => (
     `}
   >
     <FooterInner>
-      <Flex>
-        <Box width={1 / 4}>
+      <Flex
+        flexWrap="wrap"
+        mx={[-1, -1, -2]}
+      >
+        <Box width={[1,1,1 / 4]}>
           <p>
             <Link to="/students">Students</Link>
             <span>/</span>
@@ -48,16 +51,16 @@ const Footer = ({ siteTitle }) => (
           <p>Elephant &amp; Castle London SE1 6SB </p>
           <Link to="/info">Directions →</Link>
         </Box>
-        <Box width={1 / 4}>
+        <Box width={[1,1,1 / 4]}>
           {/* Half width */}
           <nav css={navBar} />
         </Box>
 
-        <Box width={1 / 4}>
+        <Box width={[1,1,1 / 4]}>
           <p>Private View</p>
           <p>Wednesday 19 June 6-9 pm </p>
         </Box>
-        <Box width={1 / 4}>
+        <Box width={[1,1,1 / 4]}>
           <p>General Access</p>
           <p>Thursday 20 – Saturday 22 June</p>
           <p>Thur - Fri: 11am – 7pm Sat: 11am – 4pm</p>
