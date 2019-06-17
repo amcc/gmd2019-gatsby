@@ -69,6 +69,9 @@ export const GlobalStyle = props => {
           font-style: normal;
         }
 
+        * {
+          box-sizing: border-box;
+        }
         html,
         body {
           /* the above makes scrolling screw up on iphone */
@@ -136,6 +139,14 @@ export const MainWrapper = styled.div`
     /* padding: 0px 1.0875rem 1.45rem; */
     padding: 0px ${rhythm(1)};
     font-size: 100%;
+  }
+`;
+export const MainWrapperLite = styled.div`
+  margin: 0 auto;
+  max-width: ${MaxWidth};
+  
+  @media (min-width: 52em) {
+    padding: 0px ${rhythm(1)};
   }
 `;
 
