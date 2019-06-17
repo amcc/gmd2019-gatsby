@@ -49,7 +49,8 @@ class PageTemplate extends Component {
         <div>
           <CategoryList categories={categories} catId={category.id} />
         </div>
-
+        <h1 dangerouslySetInnerHTML={{ __html: category.name }} />
+        
         <div css={ProjectBoxes}>
           <StudentGrid students={posts} />
         </div>
@@ -70,7 +71,13 @@ export const pageQuery = graphql`
       name
       slug
     }
-    allWordpressPost(filter: {wordpress_id: {ne: 17035}, categories: {elemMatch: {id: {eq: $id}}}}, sort: {fields: [date]}) {
+    allWordpressPost(
+      filter: {
+        wordpress_id: { ne: 17035 }
+        categories: { elemMatch: { id: { eq: $id } } }
+      }
+      sort: { fields: [date] }
+    ) {
       edges {
         node {
           wordpress_id
@@ -100,7 +107,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allWordpressCategory(filter: {name: {ne: "Uncategorised"}}) {
+    allWordpressCategory(filter: { name: { ne: "Uncategorised" } }) {
       edges {
         node {
           id

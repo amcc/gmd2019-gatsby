@@ -27,6 +27,7 @@ const homeTitle = css`
   line-height: 18px;
   margin: 0.1 0 0 0 em;
   padding-top: 0.5rem;
+  padding-left: 1rem;
   font-size: 200%;
   @media (min-width: 40em) {
     font-size: 200%;
@@ -227,6 +228,7 @@ const menuListItem = css`
     color: black;
     text-decoration: none;
     border-bottom: 2px solid transparent;
+
     transition: 0.1s ease-in-out;
   }
   a:hover {
@@ -234,7 +236,7 @@ const menuListItem = css`
     color: ${SubtleAccent};
   }
   a:active {
-    color: ${Accent};
+    color: ${SubtleAccent};
   }
   font-size: 114%;
   padding: 0.6rem 0.5rem 0.5rem 0rem;

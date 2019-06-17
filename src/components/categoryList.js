@@ -14,14 +14,21 @@ const CategoryListStyle = css`
   margin-top: ${rhythm(2)};
   position: relative;
   z-index: 2;
+  background: #ececec;
+  padding: ${rhythm(1)};
   .active {
     a{
       h3{
         color:${SubtleAccent};
       }
+
+      h3::after{
+        content: "{";
+      }
     }
     
   }
+  .
 `;
 
 const CategoryList = ({ categories, catId }) => {

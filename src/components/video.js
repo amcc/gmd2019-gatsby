@@ -1,19 +1,20 @@
 import React from "react"
 import { css } from "@emotion/core";
 
-export const VideoStyle = css`
+const VideoStyle = css`
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+ iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+   }
 `;
+
 
 const Video = ({ videoSrcURL, videoTitle, ...props }) => {
   // console.log(videoSrcURL)
@@ -56,5 +57,6 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => {
     </div>
   )
 }
+
 
 export default Video
