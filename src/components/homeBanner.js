@@ -136,10 +136,11 @@ const HomeBanner = ({ text }) => {
             </Flex>
           </HeroTextOverlayInner>
           <Salon css={PaddedMobile}>
-            <span>
+            {/* <span>
               &#123;<span />
             </span>
             <span className="salontext">Salon XIX</span>
+            */}
           </Salon>
         </HeroTextOverlay>
       </MainWrapper>
