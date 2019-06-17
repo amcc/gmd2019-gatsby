@@ -17,10 +17,7 @@ import CategoryList from "../components/categoryList";
 // } from "../utils/styles";
 
 const StudentNames = css`
-  display: block;
-  @media (min-width: 40em) {
-    display: none;
-  }
+
 `;
 
 class Students extends Component {

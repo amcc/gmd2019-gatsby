@@ -6,7 +6,6 @@ const VideoStyle = css`
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
-
  iframe {
 	position: absolute;
 	top: 0;
@@ -58,5 +57,6 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => {
     </div>
   )
 }
+
 
 export default Video
