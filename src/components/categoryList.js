@@ -73,7 +73,7 @@ const CategoryList = ({ categories, catId }) => {
           mx={[-1, -1, -2]}
         >
           <Box
-            width={[1, 1 / 3, 1 / 4, 1 / 5]}
+            width={[1 / 2, 1 / 3, 1 / 4, 1 / 5]}
             px={[1, 1, 2]}
             key={`box-all`}
             className={currentCategory}
@@ -94,7 +94,7 @@ const CategoryList = ({ categories, catId }) => {
             }
             return (
               <Box
-                width={[1, 1 / 3, 1 / 4, 1 / 5]}
+                width={[1 / 2, 1 / 3, 1 / 4, 1 / 5]}
                 px={[1, 1, 2]}
                 key={`box-${node.slug}`}
                 className={currentCategory}
