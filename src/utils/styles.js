@@ -156,7 +156,10 @@ export const PostMain = styled.div`
 `;
 export const PostTitleItems = styled.div`
   /* width: auto; */
-  margin-bottom: ${rhythm(2)};
+  /* margin-bottom: ${rhythm(2)}; */
+  a {
+    text-decoration: underline;
+  }
 `;
 export const TitleMeta = css`
   color: gold;
@@ -184,7 +187,7 @@ export const FullWidth = styled.div`
 `;
 
 export const MarginTopPost = css`
-  margin-top: ${rhythm(3)};
+  margin-top: ${rhythm(2)};
   @media (min-width: 40em) {
     margin-top: ${rhythm(3)};
   }

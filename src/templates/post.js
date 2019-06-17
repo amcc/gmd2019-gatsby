@@ -47,7 +47,7 @@ class PostTemplate extends Component {
           <PostTitleItems css={PaddedMobile}>
             {post.acf.display_name && (
               <Box width={1} px={[0, 1, 2]} key={`post-name`}>
-                <div css={PaddedMobile}>
+                <div>
                   <h1
                     dangerouslySetInnerHTML={{ __html: post.acf.display_name }}
                   />
@@ -99,20 +99,22 @@ class PostTemplate extends Component {
               <Flex
                 flexWrap="wrap"
                 flexDirection="row"
-                py={2}
+                py={1}
                 css={ProjectStyle}
                 key={i}
               >
-                <Box width={1} px={[2, 2]} key={`title-${i}`}>
-                  <h3
+                <Box width={1} px={[0, 2]} key={`title-${i}`}>
+                  <h2
+                   css={PaddedMobile}
                     dangerouslySetInnerHTML={{
                       __html: project.project_title
                     }}
                   />
                 </Box>
-                <Box width={1} px={[2, 2]} key={`description-${i}`}>
+                <Box width={1} px={[0, 2]} key={`description-${i}`}>
                   <Box width={[1, 1, 1 / 2]} key={`description-inner-${i}`}>
                     <p
+                     css={PaddedMobile}
                       dangerouslySetInnerHTML={{
                         __html: project.project_description
                       }}

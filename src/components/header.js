@@ -38,7 +38,10 @@ const homeTitle = css`
   a {
     display: block;
     text-decoration: none;
-    padding: 1rem;
+    padding: 1rem 0.4rem;
+    @media (min-width: 40em) {
+      padding: 1rem;
+    }
   }
   a:hover {
     text-decoration: none;

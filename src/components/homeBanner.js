@@ -124,6 +124,7 @@ const homeBannerDesktop = css`
 
 const homeBannerMobile = css`
   display: block;
+  padding: 1rem 1.0875rem;
   @media (min-width: 40em) {
     display: none;
   }
@@ -176,7 +177,7 @@ const HomeBanner = ({ text }) => {
               </Flex>
             </div>
             <div css={homeBannerMobile}>
-              <Flex flexWrap="wrap" mx={[-1, -1, -2]}>
+              <Flex flexWrap="wrap" mx={[1, -1, -2]}>
                 <Box width={[1, 1, 1 / 4]}>
                   <p>
                     <Link to="/students">Students</Link>
