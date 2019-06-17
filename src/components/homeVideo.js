@@ -8,46 +8,13 @@ import { HeaderOffset, HeaderOffsetMobile } from "../utils/styles"
 
 const CustomHeroImage = styled.div`
   /* width: auto; */
-  height: ${HeaderOffsetMobile}vh;
+  /* height: ${HeaderOffsetMobile}vh; */
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  margin-top: -${HeaderOffsetMobile}px;
-  > div,
-  a > div {
-    height: 100vh;
-  }
-  @media (min-width: 40em) {
-    height: ${HeaderOffset}vh;
-    /* height: 100vh; */
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    margin-top: -${HeaderOffset}px;
-    > div,
-    a > div {
-      height: 100vh;
-    }
-  }
+  height: 100vh;
+  width: 100vw;
+  /* margin-top: -${HeaderOffsetMobile}px; */
 `
-
-// class Video extends React.Component {
-//   shouldComponentUpdate(nextProps) {
-//     return nextProps.src !== this.props.src;
-//   }
-
-//   render() {
-//     return (
-//       <div dangerouslySetInnerHTML={{ __html: `
-//         <video
-//           loop
-//           muted
-//           autoplay
-//           playsinline
-//           src="${this.props.src}"
-//         />,
-//       ` }}></div>
-//     );
-//   }
-// }
 
 const HomeVideo = ({ video }) => {
   return (
@@ -74,37 +41,31 @@ const HomeVideo = ({ video }) => {
 
       <div
         css={css`
-          display: -webkit-flex;
+          /* display: -webkit-flex;
           display: flex;
           -webkit-align-items: center;
           align-items: center;
           -webkit-justify-content: center;
           justify-content: center;
-          overflow-x: hidden;
+          overflow: hidden;
           video {
-            /* height: 100vh;
-            width: auto; */
-            object-fit: cover;
-            @media (min-width: 40em) {
-              /* width: 100vw;
-              height: auto; */
-            }
-          }
+            object-fit: contain;
+          } */
         `}
-          dangerouslySetInnerHTML={{
-            __html: `
-          <video autoplay loop muted playsinline>
-            <source src="https://res.cloudinary.com/gmdlcc/video/upload/v1560775058/Animation_Show_fgra1b.mov" type="video/mp4">
-          </video>
-        `,
-          }}
-      //   dangerouslySetInnerHTML={{
-      //     __html: `
-      //   <video autoplay loop muted playsinline>
-      //     <source src="${video}" type="video/mp4">
-      //   </video>
-      // `,
-      //   }}
+        //   dangerouslySetInnerHTML={{
+        //     __html: `
+        //   <video autoplay loop muted playsinline>
+        //     <source src="https://res.cloudinary.com/gmdlcc/video/upload/v1560775058/Animation_Show_fgra1b.mov" type="video/mp4">
+        //   </video>
+        // `,
+        //   }}
+        dangerouslySetInnerHTML={{
+          __html: `
+        <video autoplay loop muted playsinline>
+          <source src="${video}" type="video/mp4">
+        </video>
+      `,
+        }}
       />
     </CustomHeroImage>
   )

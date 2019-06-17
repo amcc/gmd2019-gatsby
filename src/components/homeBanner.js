@@ -15,8 +15,7 @@ import {
 import { rhythm } from "../utils/typography";
 
 const CustomHeroImage = styled.div`
-  /* width: auto; */
-  background: white;
+  /* background: white;
   height: 100vh;
   z-index: -2;
   margin-left: calc(50% - 50vw);
@@ -28,7 +27,6 @@ const CustomHeroImage = styled.div`
   }
   @media (min-width: 40em) {
     height: 100vh;
-    /* height: 100vh; */
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: -${HeaderOffset}px;
@@ -36,13 +34,13 @@ const CustomHeroImage = styled.div`
     a > div {
       height: 100vh;
     }
-  }
+  } */
 `;
 const HeroTextOverlay = styled.div`
-  position: absolute;
+  /* position: absolute;
   top: ${HeaderOffset}px;
   z-index: 1;
-  height: 100%;
+  height: 100%; */
 `;
 const HeroTextOverlayInner = styled.div`
   /* height: 60%; */

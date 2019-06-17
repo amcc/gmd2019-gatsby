@@ -301,6 +301,7 @@ const Header = class extends React.Component {
         <Headroom
           style={{
             background: "#fff",
+            boxShadow: "1px 1px 15px rgba(0,0,0,0.1)",
             zIndex: 1000
           }}
         >

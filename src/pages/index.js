@@ -26,7 +26,16 @@ import HomeVideo from "../components/homeVideo";
 const HeroContainer = styled.div`
   position: relative;
 `;
-
+const HomeBannerStyle = css`
+  /* margin-top: -80px;
+  position: relative;
+  z-index: 10; */
+`;
+const HomeVideoStyle = css`
+  /* margin-top: -80px; */
+  /* position: relative; */
+  /* z-index: 9; */
+`;
 
 const StudentNames = css`
   display: block;
@@ -42,7 +51,6 @@ const ProjectBoxes = css`
 `;
 
 class Home extends Component {
-
   render() {
     const posts = this.props.data.allWordpressPost;
     const categories = this.props.data.allWordpressCategory;
@@ -50,15 +58,9 @@ class Home extends Component {
       <Layout>
         <HeroContainer>
           {/* <HeroThree /> */}
-          <HomeBanner />
-          {/* <HomeVideo
-            video="fcxblur.mp4"
-            css={css`
-              margin-top: -80px;
-              position: relative;
-              z-index: 0;
-            `}
-          /> */}
+
+          <HomeVideo video="gmdsalon.mp4" css={HomeVideoStyle} />
+          <HomeBanner css={HomeBannerStyle} />
         </HeroContainer>
 
         <div>
