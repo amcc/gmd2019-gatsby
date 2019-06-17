@@ -27,7 +27,7 @@ const StudentGrid = ({ students }) => {
   return (
     <Flex
       // mx={[0, -1, -2]}
-      // flexWrap="wrap"
+      flexWrap="wrap"
       css={css`
         margin-top: ${rhythm(2)};
         position: relative;
