@@ -24,19 +24,19 @@ const ImgBorder = css`
 `;
 
 const StudentGrid = ({ students }) => {
-  console.log(students);
   return (
     <Flex
       // mx={[0, -1, -2]}
-      flexWrap="wrap"
+      // flexWrap="wrap"
       css={css`
         margin-top: ${rhythm(2)};
         position: relative;
         z-index: 2;
+        width: 100%;
       `}
       mx={[-1, -1, -2]}
     >
-      <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`} />
+      {/* <Box width={1} px={[1, 1, 2]} key={`box-recent-projects`} /> */}
 
       {students.edges.map(({ node }) => (
         <Box

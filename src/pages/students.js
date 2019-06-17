@@ -20,7 +20,22 @@ const StudentNames = css`
 
 `;
 
-class Students extends Component {
+class Students extends Component {  
+  // constructor(props) {
+  //   super(props);
+  // }
+
+  // componentDidMount() {
+  //   this.setState({
+  //     studentGrid: false,
+  //   })
+  // }
+
+  // componentWillUnmount() {
+
+  // }
+
+  
 
   render() {
     const posts = this.props.data.allWordpressPost;

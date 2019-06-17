@@ -25,52 +25,65 @@ const CategoryListStyle = css`
       }
 
       h3::after {
-        content: "{";
+        content: " {";
       }
     }
   }
 `;
 
 const CategoryList = ({ categories, catId }) => {
+  let currentCategory;
+  if (!catId) {
+    currentCategory = "active";
+  }
   return (
-    <FullWidth
-    css={[CategoryListStyle]}
-    >
+    <FullWidth css={[CategoryListStyle]}>
       <MainWrapper>
-      <Flex
-        // mx={[0, -1, -2]}
-        flexWrap="wrap"
-        
-        mx={[-1, -1, -2]}
-      >
-        <Box width={1} px={[1, 1, 2]} key={`box-categories`} />
+        <Flex
+          // mx={[0, -1, -2]}
+          flexWrap="wrap"
+          mx={[-1, -1, -2]}
+        >
+          <Box
+            width={[1 / 2, 1 / 3, 1 / 5]}
+            px={[1, 1, 2]}
+            key={`box-all`}
+            css={[GridBoxContainer, PaddedMobile]}
+            className={currentCategory}
+          >
+            <div key="alllink">
+              <Link to={`/all`} css={{ textDecoration: `none` }}>
+                <h3>All</h3>
+              </Link>
+            </div>
+          </Box>
 
-        {categories.edges.map(({ node }) => {
-          console.log(catId);
-          console.log(node.id);
-          let currentCategory;
-          if (catId == node.id) {
-            currentCategory = "active";
-          } else {
-            currentCategory = "inactive";
-          }
-          return (
-            <Box
-              width={[1 / 2, 1 / 3, 1 / 5]}
-              px={[1, 1, 2]}
-              key={`box-${node.slug}`}
-              css={[GridBoxContainer, PaddedMobile]}
-              className={currentCategory}
-            >
-              <div key={node.slug}>
-                <Link to={`/${node.slug}`} css={{ textDecoration: `none` }}>
-                  <h3>{node.name}</h3>
-                </Link>
-              </div>
-            </Box>
-          );
-        })}
-      </Flex>
+          {categories.edges.map(({ node }) => {
+            console.log(catId);
+            console.log(node.id);
+            
+            if (catId === node.id) {
+              currentCategory = "active";
+            } else {
+              currentCategory = "inactive";
+            }
+            return (
+              <Box
+                width={[1 / 2, 1 / 3, 1 / 5]}
+                px={[1, 1, 2]}
+                key={`box-${node.slug}`}
+                css={[GridBoxContainer, PaddedMobile]}
+                className={currentCategory}
+              >
+                <div key={node.slug}>
+                  <Link to={`/${node.slug}`} css={{ textDecoration: `none` }}>
+                    <h3>{node.name}</h3>
+                  </Link>
+                </div>
+              </Box>
+            );
+          })}
+        </Flex>
       </MainWrapper>
     </FullWidth>
   );

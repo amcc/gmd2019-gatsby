@@ -38,7 +38,6 @@ const ProjectBoxes = css`
 class PageTemplate extends Component {
   render() {
     const posts = this.props.data.allWordpressPost;
-    const category = this.props.data.wordpressCategory;
     const categories = this.props.data.allWordpressCategory;
 
     return (
@@ -47,9 +46,9 @@ class PageTemplate extends Component {
           <HomeBanner />
         </HeroContainer> */}
         <div>
-          <CategoryList categories={categories} catId={category.id} />
+          <CategoryList categories={categories} />
         </div>
-        {/* <h1 dangerouslySetInnerHTML={{ __html: category.name }} /> */}
+        {/* <h1>All</h1> */}
         
         <div css={ProjectBoxes}>
           <StudentGrid students={posts} />
@@ -65,16 +64,10 @@ class PageTemplate extends Component {
 export default PageTemplate;
 
 export const pageQuery = graphql`
-  query($id: String!) {
-    wordpressCategory(id: { eq: $id }) {
-      id
-      name
-      slug
-    }
+  query {
     allWordpressPost(
       filter: {
         wordpress_id: { ne: 17035 }
-        categories: { elemMatch: { id: { eq: $id } } }
       }
       sort: { fields: [title] }
     ) {

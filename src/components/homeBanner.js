@@ -86,7 +86,7 @@ const HomeTitle = css`
 const Info = css`
   font-family: "nb_internationalmono";
   letter-spacing: -0.025em;
-  display: block;
+  /* display: block; */
   color: black;
   margin-top: ${rhythm(1)};
 `;
@@ -110,6 +110,25 @@ const JustifyEnd = css`
   }
 `;
 
+const navBar = css`
+  /* float: right; */
+  padding-top: 10px;
+`;
+
+const homeBannerDesktop = css`
+  display: none;
+  @media (min-width: 40em) {
+    display: block;
+  }
+`;
+
+const homeBannerMobile = css`
+  display: block;
+  @media (min-width: 40em) {
+    display: none;
+  }
+`;
+
 const HomeBanner = ({ text }) => {
   return (
     <CustomHeroImage>
@@ -120,40 +139,70 @@ const HomeBanner = ({ text }) => {
           `}
         >
           <HeroTextOverlayInner>
-            <Flex
-              // mx={[0, -1, -2]}
-              flexWrap="wrap"
-              mx={[-1, -1, -2]}
-            >
-              <Box
-                width={[1, 1, 1 / 3]}
-                px={[1, 1, 2]}
-                key={`place`}
-                css={[GridBoxContainer, PaddedMobile, JustifyStart]}
+            <div css={homeBannerDesktop}>
+              <Flex
+                // mx={[0, -1, -2]}
+                flexWrap="wrap"
+                mx={[-1, -1, -2]}
               >
-                <span css={Info}>London College of Communication</span>
-              </Box>
-              <Box
-                width={[1, 1, 1 / 3]}
-                px={[1, 1, 2]}
-                key={`date`}
-                css={[GridBoxContainer, PaddedMobile, JustifyCenter]}
-              >
-                <span css={Info}>19 - 22 June</span>
-              </Box>
-              <Box
-                width={[1, 1, 1 / 3]}
-                px={[1, 1, 2]}
-                key={`info`}
-                css={[GridBoxContainer, PaddedMobile, JustifyEnd]}
-              >
-                <span css={Info}>
-                  <Link to={`/info`} css={{ textDecoration: `none` }}>
-                    <span css={Info}>More Info ></span>
-                  </Link>
-                </span>
-              </Box>
-            </Flex>
+                <Box
+                  width={[1, 1, 1 / 3]}
+                  px={[1, 1, 2]}
+                  key={`place`}
+                  css={[GridBoxContainer, PaddedMobile, JustifyStart]}
+                >
+                  <span css={Info}>London College of Communication</span>
+                </Box>
+                <Box
+                  width={[1, 1, 1 / 3]}
+                  px={[1, 1, 2]}
+                  key={`date`}
+                  css={[GridBoxContainer, PaddedMobile, JustifyCenter]}
+                >
+                  <span css={Info}>19 - 22 June</span>
+                </Box>
+                <Box
+                  width={[1, 1, 1 / 3]}
+                  px={[1, 1, 2]}
+                  key={`info`}
+                  css={[GridBoxContainer, PaddedMobile, JustifyEnd]}
+                >
+                  <span css={Info}>
+                    <Link to={`/info`} css={{ textDecoration: `none` }}>
+                      <span css={Info}>More Info &#8594;</span>
+                    </Link>
+                  </span>
+                </Box>
+              </Flex>
+            </div>
+            <div css={homeBannerMobile}>
+              <Flex flexWrap="wrap" mx={[-1, -1, -2]}>
+                <Box width={[1, 1, 1 / 4]}>
+                  <p>
+                    <Link to="/students">Students</Link>
+                    <span>/</span>
+                    <Link to="/info">Info</Link>
+                  </p>
+                  <p>London College of Communication</p>
+                  <p>Elephant &amp; Castle London SE1 6SB </p>
+                  <Link to="/info">Directions →</Link>
+                </Box>
+                <Box width={[1, 1, 1 / 4]}>
+                  {/* Half width */}
+                  <nav css={navBar} />
+                </Box>
+
+                <Box width={[1, 1, 1 / 4]}>
+                  <p>Private View</p>
+                  <p>Wednesday 19 June 6-9 pm </p>
+                </Box>
+                <Box width={[1, 1, 1 / 4]}>
+                  <p>General Access</p>
+                  <p>Thursday 20 – Saturday 22 June</p>
+                  <p>Thur - Fri: 11am – 7pm Sat: 11am – 4pm</p>
+                </Box>
+              </Flex>
+            </div>
           </HeroTextOverlayInner>
         </HeroTextOverlay>
       </MainWrapper>
