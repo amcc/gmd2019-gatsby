@@ -43,7 +43,7 @@ const GridHeaderSizeMobile = `90%`;
 // rebass grid breakpoints
 // 40em, 52em, 64em
 export const GlobalStyle = props => {
-  console.log(NBInternationalBoldEOT);
+  // console.log(NBInternationalBoldEOT);
   return (
     <Global
       {...props}
@@ -223,4 +223,8 @@ export const GridSectionHeader = css`
     font-size: ${GridHeaderSize};
   } */
   color: ${Accent};
+`;
+export const GridBoxContainer = css`
+
+  /* background: ${Accent}; */
 `;

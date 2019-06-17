@@ -14,7 +14,6 @@ import { rhythm } from "../utils/typography";
 
 
 const StudentList = ({ students }) => {
-  console.log(students);
   return (
     <Flex
             // mx={[0, -1, -2]}

@@ -30,6 +30,12 @@ const CategoryListStyle = css`
     }
   }
 `;
+const CategoryItem = css`
+  text-decoration: none;
+`;
+const CategoryBox = css`
+  padding-left: ${rhythm(1 / 2)};
+`;
 
 const CategoryList = ({ categories, catId }) => {
   let currentCategory;
@@ -42,25 +48,23 @@ const CategoryList = ({ categories, catId }) => {
         <Flex
           // mx={[0, -1, -2]}
           flexWrap="wrap"
-          mx={[-1, -1, -2]}
+          mx={[1, 2, 2]}
         >
           <Box
             width={[1 / 2, 1 / 3, 1 / 5]}
-            px={[1, 1, 2]}
+            px={[1, 2, 2]}
             key={`box-all`}
-            css={[GridBoxContainer, PaddedMobile]}
+            css={[GridBoxContainer, PaddedMobile, CategoryBox]}
             className={currentCategory}
           >
             <div key="alllink">
-              <Link to={`/all`} css={{ textDecoration: `none` }}>
+              <Link to={`/all`} css={CategoryItem}>
                 <h3>All</h3>
               </Link>
             </div>
           </Box>
 
           {categories.edges.map(({ node }) => {
-            console.log(catId);
-            console.log(node.id);
             
             if (catId === node.id) {
               currentCategory = "active";
