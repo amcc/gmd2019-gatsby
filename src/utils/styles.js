@@ -18,7 +18,7 @@ import {
 
 const MaxWidth = `1400px`;
 export const HeaderOffset = "80";
-export const HeaderOffsetMobile = "61";
+export const HeaderOffsetMobile = "90";
 
 export const Accent = `#5e6b79`;
 export const SubtleAccent = `#ff5001`;

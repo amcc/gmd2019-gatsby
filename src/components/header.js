@@ -24,22 +24,29 @@ const headerHeight = css`
 `;
 const homeTitle = css`
   transition: all 0.3s;
-  line-height: 18px;
+  /* line-height: 18px; */
   margin: 0.1 0 0 0 em;
-  padding-top: 0.5rem;
+  /* padding-top: -0.5rem; */
   padding-left: 1rem;
   font-size: 200%;
   @media (min-width: 40em) {
     font-size: 200%;
     padding-left: 0;
-    padding-top: 0.8rem;
+    padding-top: 0.07rem;
+
   }
   a {
+    display: block;
     text-decoration: none;
+    padding: 1rem;
   }
   a:hover {
     text-decoration: none;
     color: ${SubtleAccent};
+  }
+  span {
+    display: block;
+    padding-bottom: 5px;
   }
 `;
 
@@ -74,7 +81,7 @@ const navBar = css`
     z-index: 99;
     /* height: 100%;
     width: 100%; */
-    top: 7px;
+    top: 20px;
     right: 14px;
     height: ${headerScaler}px;
     width: ${headerScaler}px;
@@ -311,8 +318,8 @@ const Header = class extends React.Component {
                       `}
                     >
                       {/* {this.props.siteTitle} */}
-                      Graphic and Media Design <br />
-                      Degree Show 2019
+                      <span>Graphic and Media Design</span>
+                      <span>Degree Show 2019</span>
                     </Link>
                   </h3>
                 </Box>
