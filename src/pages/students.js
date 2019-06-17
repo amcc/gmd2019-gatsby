@@ -72,18 +72,6 @@ export const pageQuery = graphql`
             name
             slug
           }
-          acf {
-            featured_image {
-              source_url
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 680) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }

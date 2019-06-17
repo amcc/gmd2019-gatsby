@@ -77,7 +77,7 @@ export const GlobalStyle = props => {
           /* the above makes scrolling screw up on iphone */
           /* -webkit-overflow-scrolling: touch; */
           height: 100%;
-          font-family: "nb_internationalmono", Helvetica, sans-serif;
+          font-family: "nb_internationalmono", Helvetica, Arial, sans-serif;
         }
 
         body {

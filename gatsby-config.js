@@ -7,6 +7,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.gmdlcc.com`,
     title: `Graphic Media Design {Salon XIX}`,
     subtitle: `Graphic Media Design {Salon XIX}`
   },
@@ -92,19 +93,20 @@ module.exports = {
         omitGoogleFont: true
       }
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://gmdlcc2019.netlify.com",
-        sitemap: "https://gmdlcc2019.netlify.com/sitemap.xml",
-        env: {
-          development: {
-            policy: [{ userAgent: "*", disallow: ["/"] }]
-          },
-          production: {
-            policy: [{ userAgent: "*", disallow: "/" }]
-          }
-        }
+        host: "https://www.gmdlcc.com",
+        sitemap: "https://www.gmdlcc.com/sitemap.xml",
+        // env: {
+        //   development: {
+        //     policy: [{ userAgent: "*", disallow: ["/"] }]
+        //   },
+        //   production: {
+        //     policy: [{ userAgent: "*", disallow: "/" }]
+        //   }
+        // }
       }
     }
   ]

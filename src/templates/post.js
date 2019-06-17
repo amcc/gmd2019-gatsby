@@ -69,25 +69,39 @@ class PostTemplate extends Component {
                 </a>
               </Box>
             )}
-            {post.acf.biography && (
+            <Flex
+              // mx={[0, -1, -2]}
+              flexWrap="wrap"
+              py={4}
+              css={css`
+              /* margin: ${rhythm(2)} 0; */
+            `}
+            >
+              <Box width={[1, 1, 1 / 2]} px={[0, 1, 2]} key={`post-biography`}>
+                {post.acf.biography && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: post.acf.biography }}
+                  />
+                )}
+              </Box>
+
               <Box
                 width={[1, 1, 1 / 2]}
-                px={[0, 1, 2]}
-                py={4}
-                key={`post-biography`}
+                px={[0, 2, 4]}
+                key={`featured-image`}
+                py={[4, 4, 0]}
               >
-                <div dangerouslySetInnerHTML={{ __html: post.acf.biography }} />
+                {post.acf.featured_image && (
+                  <Img
+                    css={{ marginBottom: rhythm(1) }}
+                    key={"featured image"}
+                    fluid={
+                      post.acf.featured_image.localFile.childImageSharp.fluid
+                    }
+                  />
+                )}
               </Box>
-            )}
-            {post.acf.featured_image && (
-              <Box width={1} px={[0, 1, 2]} key={`post-name`}>
-                <Img
-                  css={{ marginBottom: rhythm(1) }}
-                  key={"featured image"}
-                  fluid={post.acf.featured_image.localFile.childImageSharp.fluid}
-                />
-              </Box>
-            )}
+            </Flex>
           </PostTitleItems>
         </PostMain>
 
@@ -147,17 +161,19 @@ class PostTemplate extends Component {
                           />
                         );
                       } else if (media.project_image) {
-                        const img =
-                          media.project_image.localFile.childImageSharp.fluid;
-                        return (
-                          <div key={`${i} image-gallery`}>
-                            <Img
-                              css={{ marginBottom: rhythm(1) }}
-                              key={img.src}
-                              fluid={img}
-                            />
-                          </div>
-                        );
+                        if (media.project_image.localFile.childImageSharp) {
+                          const img =
+                            media.project_image.localFile.childImageSharp.fluid;
+                          return (
+                            <div key={`${i} image-gallery`}>
+                              <Img
+                                css={{ marginBottom: rhythm(1) }}
+                                key={img.src}
+                                fluid={img}
+                              />
+                            </div>
+                          );
+                        }
                       } else {
                         return false;
                       }
@@ -205,7 +221,12 @@ export const pageQuery = graphql`
               fluid(
                 maxWidth: 1600
                 quality: 90
-                traceSVG: { color: "#ff5001" }
+                traceSVG: {
+                  color: "#ff5001"
+                  optTolerance: 0.2
+                  turdSize: 0.01
+                  turnPolicy: TURNPOLICY_MINORITY
+                }
               ) {
                 ...GatsbyImageSharpFluid_tracedSVG
               }
@@ -224,7 +245,12 @@ export const pageQuery = graphql`
                   fluid(
                     maxWidth: 1600
                     quality: 90
-                    traceSVG: { color: "#ff5001" }
+                    traceSVG: {
+                      color: "#ff5001"
+                      optTolerance: 0.2
+                      turdSize: 0.01
+                      turnPolicy: TURNPOLICY_MINORITY
+                    }
                   ) {
                     ...GatsbyImageSharpFluid_tracedSVG
                   }
