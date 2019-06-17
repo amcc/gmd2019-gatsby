@@ -37,7 +37,7 @@ const StudentGrid = ({ students }) => {
 
       {students.edges.map(({ node }) => (
         <Box
-          width={[1, 1 / 3, 1 / 5]}
+          width={[1, 1 / 3, 1 / 4, 1 / 5]}
           px={[1, 1, 2]}
           key={`box-${node.slug}`}
           css={GridBoxContainer}

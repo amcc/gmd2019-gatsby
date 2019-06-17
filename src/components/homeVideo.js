@@ -48,6 +48,7 @@ const HomeVideo = ({ video }) => {
           -webkit-justify-content: center;
           justify-content: center;
           overflow: hidden;
+          height: 70vh;
           video {
             object-fit: cover;
             width: 100vw;

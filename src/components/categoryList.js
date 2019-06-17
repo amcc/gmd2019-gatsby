@@ -39,13 +39,18 @@ const CategoryItem = css`
   text-decoration: none;
 `;
 const CategoryBox = css`
-  /* padding-left: ${rhythm(1 / 2)}; */
+  border: 0px solid transparent;
+  @media (min-width: 40em) {
+    border: 1px solid transparent;
+  }
 `;
 const GridBoxCategories = css`
   overflow: hidden;
   margin: 0 auto;
   max-width: 960px;
-  padding: 0;
+  /* padding: 0; */
+  padding: 0 ${rhythm(1)};
+
   @media (min-width: 40em) {
     padding: 0 ${rhythm(1 / 2)};
   }
@@ -61,16 +66,18 @@ const CategoryList = ({ categories, catId }) => {
     <FullWidth css={[CategoryListStyle]}>
       <MainWrapperLite>
         <Flex
-          // mx={[0, -1, -2]}
           flexWrap="wrap"
+          css={css`
+            width: 100%;
+          `}
           mx={[-1, -1, -2]}
         >
           <Box
-            width={[1 / 2, 1 / 3, 1 / 5]}
+            width={[1, 1 / 3, 1 / 4, 1 / 5]}
             px={[1, 1, 2]}
             key={`box-all`}
             className={currentCategory}
-            css={PaddedMobile}
+            css={CategoryBox}
           >
             <div key="alllink" css={GridBoxCategories}>
               <Link to={`/all`} css={CategoryItem}>
@@ -87,11 +94,11 @@ const CategoryList = ({ categories, catId }) => {
             }
             return (
               <Box
-                width={[1 / 2, 1 / 3, 1 / 5]}
+                width={[1, 1 / 3, 1 / 4, 1 / 5]}
                 px={[1, 1, 2]}
                 key={`box-${node.slug}`}
                 className={currentCategory}
-                css={PaddedMobile}
+                // css={PaddedMobile}
               >
                 <div key={node.slug} css={GridBoxCategories}>
                   <Link to={`/${node.slug}`} css={{ textDecoration: `none` }}>
