@@ -25,16 +25,21 @@ import HomeVideo from "../components/homeVideo";
 
 const HeroContainer = styled.div`
   position: relative;
+  height: 80vh;
 `;
 const HomeBannerStyle = css`
-  /* margin-top: -80px;
-  position: relative;
-  z-index: 10; */
+  /* margin-top: -80px; */
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
 `;
 const HomeVideoStyle = css`
-  /* margin-top: -80px; */
-  /* position: relative; */
-  /* z-index: 9; */
+  display: none;
+  @media (min-width: 40em) {
+    display: block;
+  }
+  z-index: 9;
 `;
 
 const StudentNames = css`
@@ -58,9 +63,14 @@ class Home extends Component {
       <Layout>
         <HeroContainer>
           {/* <HeroThree /> */}
-
-          <HomeVideo video="gmdsalon.mp4" css={HomeVideoStyle} />
-          <HomeBanner css={HomeBannerStyle} />
+          <div css={HomeVideoStyle}>
+          <HomeVideo video="gmdsalon.mp4"  />
+          </div>
+          <div css={HomeBannerStyle}>
+          <HomeBanner />
+          </div>
+          
+          
         </HeroContainer>
 
         <div>

@@ -11,7 +11,7 @@ const CustomHeroImage = styled.div`
   /* height: ${HeaderOffsetMobile}vh; */
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  height: 100vh;
+  height: auto;
   width: 100vw;
   /* margin-top: -${HeaderOffsetMobile}px; */
 `
@@ -41,7 +41,7 @@ const HomeVideo = ({ video }) => {
 
       <div
         css={css`
-          /* display: -webkit-flex;
+          display: -webkit-flex;
           display: flex;
           -webkit-align-items: center;
           align-items: center;
@@ -49,8 +49,10 @@ const HomeVideo = ({ video }) => {
           justify-content: center;
           overflow: hidden;
           video {
-            object-fit: contain;
-          } */
+            object-fit: cover;
+            width: 100vw;
+            height: auto;
+          }
         `}
         //   dangerouslySetInnerHTML={{
         //     __html: `

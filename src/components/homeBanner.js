@@ -1,5 +1,5 @@
 import React from "react";
-// import { rhythm } from "../utils/typography"
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 // import { Video } from "cloudinary-react"
 import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
@@ -9,7 +9,8 @@ import {
   HeaderOffset,
   HeaderOffsetMobile,
   PaddedMobile,
-  MainWrapper
+  MainWrapper,
+  GridBoxContainer
 } from "../utils/styles";
 
 import { rhythm } from "../utils/typography";
@@ -36,15 +37,9 @@ const CustomHeroImage = styled.div`
     }
   } */
 `;
-const HeroTextOverlay = styled.div`
-  /* position: absolute;
-  top: ${HeaderOffset}px;
-  z-index: 1;
-  height: 100%; */
-`;
+const HeroTextOverlay = styled.div``;
 const HeroTextOverlayInner = styled.div`
-  /* height: 60%; */
-  width: 100%;
+  /* width: 100%;
   color: white;
   a {
     color: white;
@@ -57,11 +52,9 @@ const HeroTextOverlayInner = styled.div`
     font-size: 1em;
     color: white;
   }
-  /* mix-blend-mode: difference; */
 
   @media (min-width: 40em) {
     padding: ${rhythm(1 / 2)} 20vw 0 0;
-    /* font-size: 150%; */
     h1 {
       font-size: 1em;
     }
@@ -74,16 +67,14 @@ const HeroTextOverlayInner = styled.div`
     h1 {
       font-size: 1em;
     }
-    /* font-size: 1em; */
   }
   @media (min-width: 64em) {
     padding: ${rhythm(1 / 2)} 30vw 0 0;
-    /* font-size: 1em; */
     h1 {
       font-size: 1em;
       font-weight: 300;
     }
-  }
+  } */
 `;
 
 const HomeTitle = css`
@@ -100,20 +91,25 @@ const Info = css`
   margin-top: ${rhythm(1)};
 `;
 
-const Salon = styled.div`
-  font-family: "nb_internationalbold", Helvetica, sans-serif;
-  color: black;
-  font-size: 7em;
-  line-height: 0.8em;
-  display:none;
-
+const JustifyStart = css`
+  text-align: left;
   @media (min-width: 40em) {
-    font-size: 14em;
-    margin-left: 10vw;
-    bottom: 25vh;
-    display:block;
+    text-align: left;
   }
 `;
+const JustifyCenter = css`
+  text-align: left;
+  @media (min-width: 40em) {
+    text-align: center;
+  }
+`;
+const JustifyEnd = css`
+  text-align: left;
+  @media (min-width: 40em) {
+    text-align: right;
+  }
+`;
+
 const HomeBanner = ({ text }) => {
   return (
     <CustomHeroImage>
@@ -124,22 +120,41 @@ const HomeBanner = ({ text }) => {
           `}
         >
           <HeroTextOverlayInner>
-            <Flex>
-              <Box>
-                <h1 css={HomeTitle}>
-                  <span css={Info}>London College <br/> of Communication</span>
-                  <span css={Info}>19 - 22 June</span>
-                </h1>
+            <Flex
+              // mx={[0, -1, -2]}
+              flexWrap="wrap"
+              mx={[-1, -1, -2]}
+            >
+              <Box
+                width={[1, 1, 1 / 3]}
+                px={[1, 1, 2]}
+                key={`place`}
+                css={[GridBoxContainer, PaddedMobile, JustifyStart]}
+              >
+                <span css={Info}>London College of Communication</span>
+              </Box>
+              <Box
+                width={[1, 1, 1 / 3]}
+                px={[1, 1, 2]}
+                key={`date`}
+                css={[GridBoxContainer, PaddedMobile, JustifyCenter]}
+              >
+                <span css={Info}>19 - 22 June</span>
+              </Box>
+              <Box
+                width={[1, 1, 1 / 3]}
+                px={[1, 1, 2]}
+                key={`info`}
+                css={[GridBoxContainer, PaddedMobile, JustifyEnd]}
+              >
+                <span css={Info}>
+                  <Link to={`/info`} css={{ textDecoration: `none` }}>
+                    <span css={Info}>More Info ></span>
+                  </Link>
+                </span>
               </Box>
             </Flex>
           </HeroTextOverlayInner>
-          <Salon css={PaddedMobile}>
-            {/* <span>
-              &#123;<span />
-            </span>
-            <span className="salontext">Salon XIX</span>
-            */}
-          </Salon>
         </HeroTextOverlay>
       </MainWrapper>
     </CustomHeroImage>
