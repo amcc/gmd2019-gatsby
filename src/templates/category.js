@@ -76,7 +76,7 @@ export const pageQuery = graphql`
         wordpress_id: { ne: 17035 }
         categories: { elemMatch: { id: { eq: $id } } }
       }
-      sort: { fields: [date] }
+      sort: { fields: [title] }
     ) {
       edges {
         node {

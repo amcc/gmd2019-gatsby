@@ -11,6 +11,7 @@ import HomeBanner from "../components/homeBanner";
 import StudentGrid from "../components/studentGrid";
 import StudentList from "../components/studentList";
 import CategoryList from "../components/categoryList";
+import HomeVideo from "../components/homeVideo";
 // import {
 //   GridBoxContainer,
 //   GridSectionHeader,
@@ -50,6 +51,14 @@ class Home extends Component {
         <HeroContainer>
           {/* <HeroThree /> */}
           <HomeBanner />
+          {/* <HomeVideo
+            video="fcxblur.mp4"
+            css={css`
+              margin-top: -80px;
+              position: relative;
+              z-index: 0;
+            `}
+          /> */}
         </HeroContainer>
 
         <div>
@@ -74,7 +83,7 @@ export const pageQuery = graphql`
   query {
     allWordpressPost(
       filter: { wordpress_id: { ne: 17035 } }
-      sort: { fields: [date] }
+      sort: { fields: [title] }
     ) {
       edges {
         node {

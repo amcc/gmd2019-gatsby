@@ -56,7 +56,7 @@ class PostTemplate extends Component {
             )}
             {post.acf.email && (
               <Box width={1} px={[0, 1, 2]} key={`post-email`}>
-                <div dangerouslySetInnerHTML={{ __html: post.acf.email }} />
+                <a href={`mailto:${post.acf.email}`}>{post.acf.email}</a>
               </Box>
             )}
             {post.acf.website_url && (

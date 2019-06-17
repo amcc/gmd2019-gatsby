@@ -46,7 +46,7 @@ export const pageQuery = graphql`
   query {
     allWordpressPost(
       filter: { wordpress_id: { ne: 17035 } }
-      sort: { fields: [date] }
+      sort: { fields: [title] }
     ) {
       edges {
         node {

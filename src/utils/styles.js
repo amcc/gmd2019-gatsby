@@ -96,7 +96,7 @@ export const GlobalStyle = props => {
           font-size: 100%;
         }
 
-        h3:hover {
+        a:hover {
           color: ${SubtleAccent};
         }
 

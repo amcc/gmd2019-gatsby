@@ -91,20 +91,20 @@ const HomeVideo = ({ video }) => {
             }
           }
         `}
-        //   dangerouslySetInnerHTML={{
-        //     __html: `
-        //   <video autoplay loop muted playsinline>
-        //     <source src="https://res.cloudinary.com/amcc/video/upload/v1559078362/Comp_2_2_c6wxxb.mp4" type="video/mp4">
-        //   </video>
-        // `,
-        //   }}
-        dangerouslySetInnerHTML={{
-          __html: `
-        <video autoplay loop muted playsinline>
-          <source src="${video}" type="video/mp4">
-        </video>
-      `,
-        }}
+          dangerouslySetInnerHTML={{
+            __html: `
+          <video autoplay loop muted playsinline>
+            <source src="https://res.cloudinary.com/gmdlcc/video/upload/v1560775058/Animation_Show_fgra1b.mov" type="video/mp4">
+          </video>
+        `,
+          }}
+      //   dangerouslySetInnerHTML={{
+      //     __html: `
+      //   <video autoplay loop muted playsinline>
+      //     <source src="${video}" type="video/mp4">
+      //   </video>
+      // `,
+      //   }}
       />
     </CustomHeroImage>
   )
