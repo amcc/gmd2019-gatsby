@@ -3,11 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
 import { css } from "@emotion/core";
-import {
-  GridBoxContainer,
-  GridBox,
-  GridHeader
-} from "../utils/styles";
+import { GridBoxContainer, GridBox, GridHeader } from "../utils/styles";
 
 import { rhythm } from "../utils/typography";
 import StudentGridItem from "./studentGridItem";
@@ -18,7 +14,6 @@ const Categories = css`
 
 const ImgBorder = css`
   border: 1px solid #ececec;
-
 `;
 
 const StudentGrid = ({ students }) => {
@@ -32,12 +27,11 @@ const StudentGrid = ({ students }) => {
         z-index: 2;
         width: 100%;
       `}
-      mx={[-1, -1, -2]}
+      mx={[1, -1, -2]}
     >
-
       {students.edges.map(({ node }) => (
         <Box
-          width={[1, 1 / 3, 1 / 4, 1 / 5]}
+          width={[1 / 3, 1 / 3, 1 / 4, 1 / 5]}
           px={[1, 1, 2]}
           key={`box-${node.slug}`}
           css={GridBoxContainer}

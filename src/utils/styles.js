@@ -144,8 +144,8 @@ export const MainWrapper = styled.div`
 export const MainWrapperLite = styled.div`
   margin: 0 auto;
   max-width: ${MaxWidth};
-  
-  @media (min-width: 52em) {
+  padding: 0;
+  @media (min-width: ${MaxWidth}) {
     padding: 0px ${rhythm(1)};
   }
 `;
@@ -198,8 +198,12 @@ export const GridBox = css`
   margin: 0 auto;
   max-width: 960px;
   margin-bottom: ${rhythm(1)};
-  padding: ${rhythm(1 / 2)};
-  border: 1px solid #ececec;
+  padding: 0;
+  border: 0px solid #ececec;
+  @media (min-width: 40em) {
+    padding: ${rhythm(1 / 2)};
+    border: 1px solid #ececec;
+  }
   a > div {
     height: 120px;
     @media (min-width: 40em) {

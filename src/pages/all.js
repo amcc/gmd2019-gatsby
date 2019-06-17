@@ -23,13 +23,13 @@ const Categories = css`
   font: 14px "nb_internationalbold";
 `;
 const StudentNames = css`
-  display: block;
+  display: none;
   @media (min-width: 40em) {
     display: none;
   }
 `;
 const ProjectBoxes = css`
-  display: none;
+  display: flex;
   @media (min-width: 40em) {
     display: flex;
   }
