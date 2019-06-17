@@ -28,7 +28,6 @@ const CategoryListStyle = css`
     }
     
   }
-  .
 `;
 
 const CategoryList = ({ categories, catId }) => {
