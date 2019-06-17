@@ -30,7 +30,6 @@ export const ProjectStyle = css`
   padding-top: ${rhythm(2)};
 `;
 
-
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost;
@@ -80,6 +79,15 @@ class PostTemplate extends Component {
                 <div dangerouslySetInnerHTML={{ __html: post.acf.biography }} />
               </Box>
             )}
+            {post.acf.featured_image && (
+              <Box width={1} px={[0, 1, 2]} key={`post-name`}>
+                <Img
+                  css={{ marginBottom: rhythm(1) }}
+                  key={"featured image"}
+                  fluid={post.acf.featured_image.localFile.childImageSharp.fluid}
+                />
+              </Box>
+            )}
           </PostTitleItems>
         </PostMain>
 
@@ -105,7 +113,7 @@ class PostTemplate extends Component {
               >
                 <Box width={1} px={[0, 2]} key={`title-${i}`}>
                   <h2
-                   css={PaddedMobile}
+                    css={PaddedMobile}
                     dangerouslySetInnerHTML={{
                       __html: project.project_title
                     }}
@@ -114,7 +122,7 @@ class PostTemplate extends Component {
                 <Box width={1} px={[0, 2]} key={`description-${i}`}>
                   <Box width={[1, 1, 1 / 2]} key={`description-inner-${i}`}>
                     <p
-                     css={PaddedMobile}
+                      css={PaddedMobile}
                       dangerouslySetInnerHTML={{
                         __html: project.project_description
                       }}
@@ -194,8 +202,12 @@ export const pageQuery = graphql`
           source_url
           localFile {
             childImageSharp {
-              fluid(maxWidth: 680, quality: 90) {
-                ...GatsbyImageSharpFluid
+              fluid(
+                maxWidth: 1600
+                quality: 90
+                traceSVG: { color: "#ff5001" }
+              ) {
+                ...GatsbyImageSharpFluid_tracedSVG
               }
             }
           }

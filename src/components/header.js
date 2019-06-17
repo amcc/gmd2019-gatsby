@@ -40,7 +40,8 @@ const homeTitle = css`
     text-decoration: none;
     padding: 1rem 0.4rem;
     @media (min-width: 40em) {
-      padding: 1rem;
+      /* padding: 1rem ; */
+      padding: 1rem 1rem 1rem 0.5rem;
     }
   }
   a:hover {

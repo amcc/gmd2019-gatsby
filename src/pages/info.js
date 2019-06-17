@@ -16,12 +16,12 @@ class Info extends Component {
     return (
       <Layout>
         <Flex flexWrap="wrap">
-          <Box py={4} width={1}>
+          <Box py={4} px={[0, 1, 2]} width={1}>
             <section css={PaddedMobile}>
               <h1>Graphic Media Design</h1>
             </section>
           </Box>
-          <Box py={2} width={[1, 1 / 2, 1 / 2]}>
+          <Box py={2} px={[0, 1, 2]} width={[1, 1 / 2, 1 / 2]}>
             <section css={PaddedMobile}>
               <p>
                 Final year work for Graphic Media Design students graduating in
@@ -32,7 +32,7 @@ class Info extends Component {
               <p>Thur - Fri: 11am – 7pm Sat: 11am – 4pm</p>
             </section>
           </Box>
-          <Box py={2} width={[1, 1 / 2, 1 / 2]}>
+          <Box py={2} px={[0, 1, 2]} width={[1, 1 / 2, 1 / 2]}>
             <section css={PaddedMobile}>
               <h3>Venue</h3>
               <p>London College of Communication</p>
@@ -50,17 +50,17 @@ class Info extends Component {
           </Box>
         </Flex>
         {/* <Flex flexWrap="wrap">
-          <Box py={4} width={1}>
+          <Box py={4} px={[0, 1, 2]} width={1}>
             <section css={PaddedMobile}>
               <h2>Credits</h2>
             </section>
           </Box>
-          <Box py={2} width={[1, 1 / 2, 1 / 2]}>
+          <Box py={2} px={[0, 1, 2]} width={[1, 1 / 2, 1 / 2]}>
             <section css={PaddedMobile}>
               
             </section>
           </Box>
-          <Box py={2} width={[1, 1 / 2, 1 / 2]}>
+          <Box py={2} px={[0, 1, 2]} width={[1, 1 / 2, 1 / 2]}>
             <section css={PaddedMobile}>
               
             </section>
