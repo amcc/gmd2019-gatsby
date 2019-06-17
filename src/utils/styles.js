@@ -183,7 +183,6 @@ export const GridBox = css`
   overflow: hidden;
   margin: 0 auto;
   max-width: 960px;
-  height: 350px;
   margin-bottom: ${rhythm(1)};
   padding: ${rhythm(1 / 2)};
   border: 1px solid #ececec;

@@ -8,13 +8,19 @@ import { css } from "@emotion/core";
 import {
   GridBoxContainer,
   GridBox,
-  GridHeader
+  GridHeader,
+  SubtleAccent
 } from "../utils/styles";
 
 import { rhythm } from "../utils/typography";
 
 const Categories = css`
   font: 14px "nb_internationalbold";
+`;
+
+const ImgBorder = css`
+  border: 1px solid #ececec;
+
 `;
 
 const StudentGrid = ({ students }) => {
@@ -42,7 +48,7 @@ const StudentGrid = ({ students }) => {
           <div css={GridBox} key={node.slug}>
             <Link to={`/${node.slug}`} css={{ textDecoration: `none` }}>
               {node.acf.featured_image && node.acf.featured_image.localFile && (
-                <Img
+                <Img css={ImgBorder}
                   key={
                     node.acf.featured_image.localFile.childImageSharp.fluid.src
                   }
@@ -52,24 +58,6 @@ const StudentGrid = ({ students }) => {
                 />
               )}
               <h3 css={GridHeader}>{node.title}</h3>
-              {node.categories.map((category, i) => {
-                let comma;
-                if (i < node.categories.length - 1) {
-                  comma = `, `;
-                } else {
-                  comma = ``;
-                }
-                if (category.name !== "Uncategorised") {
-                  return (
-                    <span css={Categories} key={`category-${i}`}>
-                      {category.name}
-                      {comma}
-                    </span>
-                  );
-                } else {
-                  return false
-                }
-              })}
             </Link>
 
             {/* <div dangerouslySetInnerHTML={{ __html: node.excerpt }} /> */}
