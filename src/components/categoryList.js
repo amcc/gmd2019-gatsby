@@ -14,6 +14,8 @@ const CategoryListStyle = css`
   margin-top: ${rhythm(2)};
   position: relative;
   z-index: 2;
+  background: #ececec;
+  padding: ${rhythm(1)};
   .active {
     a{
       h3{
@@ -26,6 +28,7 @@ const CategoryListStyle = css`
     }
     
   }
+  .
 `;
 
 const CategoryList = ({ categories, catId }) => {

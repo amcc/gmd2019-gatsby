@@ -27,6 +27,7 @@ const homeTitle = css`
   line-height: 18px;
   margin: 0.1 0 0 0 em;
   padding-top: 0.5rem;
+  padding-left: 1rem;
   font-size: 200%;
   @media (min-width: 40em) {
     font-size: 200%;

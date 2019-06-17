@@ -107,11 +107,13 @@ const Salon = styled.div`
   color: black;
   font-size: 7em;
   line-height: 0.8em;
+  display:none;
 
   @media (min-width: 40em) {
     font-size: 14em;
     margin-left: 10vw;
     bottom: 25vh;
+    display:block;
   }
 `;
 const HomeBanner = ({ text }) => {
