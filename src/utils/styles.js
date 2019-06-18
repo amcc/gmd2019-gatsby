@@ -198,9 +198,6 @@ export const FullWidth = styled.div`
 
 export const MarginTopPost = css`
   margin-top: ${rhythm(2)};
-  @media (min-width: 40em) {
-    margin-top: ${rhythm(3)};
-  }
 `;
 
 export const GridBox = css`

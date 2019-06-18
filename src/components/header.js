@@ -332,12 +332,12 @@ const Header = class extends React.Component {
                   <nav css={navBar}>
                     <ul css={menuList}>
                       <li css={menuListItem}>
-                        <Link to="/students" activeStyle={{ color: "grey" }}>
+                        <Link to="/students" activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001"}}>
                           Students
                         </Link>
                       </li>
                       <li css={menuListItem}>
-                        <Link to="/info" activeStyle={{ color: "grey" }}>
+                        <Link to="/info" activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001"}}>
                           Info
                         </Link>
                       </li>
@@ -367,7 +367,7 @@ const Header = class extends React.Component {
                               text-decoration: none;
                             `}
                             onClick={() => this.unCheck("sidebarToggle")}
-                            activeStyle={{ color: "lightgrey" }}
+                            activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001" }}
                           >
                             <div css={sidebarlink}>Students</div>
                           </Link>
@@ -380,7 +380,7 @@ const Header = class extends React.Component {
                               text-decoration: none;
                             `}
                             onClick={() => this.unCheck("sidebarToggle")}
-                            activeStyle={{ color: "lightgrey" }}
+                            activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001" }}
                           >
                             <div css={sidebarlink}>Info</div>
                           </Link>
