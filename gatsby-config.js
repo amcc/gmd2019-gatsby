@@ -46,7 +46,7 @@ module.exports = {
          */
         // The protocol. This can be http or https.
 
-        // baseUrl: `gmdlccdummy.test`,
+        // baseUrl: `gmdlcc.test`,
         // protocol: `http`,
         
         baseUrl: `http://admin.gmdlcc.com`,
