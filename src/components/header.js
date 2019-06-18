@@ -195,12 +195,8 @@ const navBar = css`
   .sidebarMenuInner li {
     list-style: none;
     color: #fff;
-    /* text-transform: uppercase; */
-    /* font-weight: 300; */
-    /* padding: 20px; */
     cursor: pointer;
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
-    text-align: center;
+    text-align: left;
   }
   .sidebarMenuInner li span {
     display: block;
@@ -215,15 +211,12 @@ const navBar = css`
   }
 `;
 
-// const sideBarMenu = css``;
 
 const menuList = css`
   display: none;
   @media (min-width: 52em) {
     display: block;
   }
-  /* float: right; */
-  /* display: inline; */
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -231,7 +224,6 @@ const menuList = css`
 `;
 
 const menuListItem = css`
-  /* float: left; */
   display: inline;
   margin: 0;
   a {
@@ -239,7 +231,6 @@ const menuListItem = css`
     color: black;
     text-decoration: none;
     border-bottom: 2px solid transparent;
-
     transition: 0.1s ease-in-out;
   }
   a:hover {
@@ -341,12 +332,12 @@ const Header = class extends React.Component {
                   <nav css={navBar}>
                     <ul css={menuList}>
                       <li css={menuListItem}>
-                        <Link to="/students" activeStyle={{ color: "grey" }}>
+                        <Link to="/students" activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001"}}>
                           Students
                         </Link>
                       </li>
                       <li css={menuListItem}>
-                        <Link to="/info" activeStyle={{ color: "grey" }}>
+                        <Link to="/info" activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001"}}>
                           Info
                         </Link>
                       </li>
@@ -376,7 +367,7 @@ const Header = class extends React.Component {
                               text-decoration: none;
                             `}
                             onClick={() => this.unCheck("sidebarToggle")}
-                            activeStyle={{ color: "lightgrey" }}
+                            activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001" }}
                           >
                             <div css={sidebarlink}>Students</div>
                           </Link>
@@ -389,7 +380,7 @@ const Header = class extends React.Component {
                               text-decoration: none;
                             `}
                             onClick={() => this.unCheck("sidebarToggle")}
-                            activeStyle={{ color: "lightgrey" }}
+                            activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001" }}
                           >
                             <div css={sidebarlink}>Info</div>
                           </Link>
