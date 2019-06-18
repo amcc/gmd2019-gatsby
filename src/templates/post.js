@@ -29,6 +29,7 @@ const StudentBracket = css`
   p {
     display: none;
     color: white;
+    height:auto;
     @media (min-width: 40em) {
       display: flex;
       font-size: 8em;
@@ -68,7 +69,7 @@ class PostTemplate extends Component {
                   <Box width={1 / 16} px={[0, 1, 2]} css={StudentBracketParent}>
                     <p>&#123;</p>
                   </Box>
-                  <Box width={1} px={[0, 1, 1]}>
+                  <Box width={1} px={[0, 2, 4]}>
                     <Flex flexWrap="wrap">
                       {post.acf.display_name && (
                         <Box width={1} px={[0, 0, 1]} key={`post-name`}>
@@ -116,7 +117,7 @@ class PostTemplate extends Component {
                 width={[1, 1, 1 / 2]}
                 px={[0, 2, 4]}
                 key={`featured-image`}
-                py={[4, 4, 0]}
+                py={[4, 4, 5]}
               >
                 {post.acf.featured_image && (
                   <Img
