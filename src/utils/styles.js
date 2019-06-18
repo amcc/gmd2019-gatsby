@@ -155,12 +155,22 @@ export const PostMain = styled.div`
   /* margin-top: ${rhythm(2)}; */
 `;
 export const PostTitleItems = styled.div`
-  /* width: auto; */
-  /* margin-bottom: ${rhythm(2)}; */
   a {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: 0.1s ease-in-out;
+    font-family: "nb_internationalmono";
+  }
+
+  a:hover{
+    border-color: ${SubtleAccent};
+  }
+
+  div{
+    font-family: "nb_internationalbold";
   }
 `;
+
 export const TitleMeta = css`
   color: gold;
   margin-right: ${rhythm(1)};
