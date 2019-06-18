@@ -244,7 +244,7 @@ export const pageQuery = graphql`
                 childImageSharp {
                   fluid(
                     maxWidth: 1400
-                    quality: 75
+                    quality: 85
                     traceSVG: {
                       color: "#ff5001"
                       optTolerance: 0.2
