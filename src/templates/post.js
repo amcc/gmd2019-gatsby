@@ -83,9 +83,9 @@ class PostTemplate extends Component {
                       )}
                       {post.acf.email && (
                         <Box width={1} px={[0, 1, 1]} key={`post-email`}>
-                          <a href={`mailto:${post.acf.email}`}>
+                          {/* <a href={`mailto:${post.acf.email}`}> */}
                             {post.acf.email}
-                          </a>
+                          {/* </a> */}
                         </Box>
                       )}
                       {post.acf.website_url && (
