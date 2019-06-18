@@ -57,42 +57,6 @@ class PostTemplate extends Component {
 
         <PostMain css={MarginTopPost}>
           <PostTitleItems css={[PaddedMobile, StudentBracket]}>
-            <Flex alignItems="center">
-              <Box width={1 / 16} px={[0, 1, 2]} css={StudentBracketParent}>
-                <p>&#123;</p>
-              </Box>
-              <Box width={1} px={[0, 1, 1]}>
-                <Flex flexWrap="wrap">
-                  {post.acf.display_name && (
-                    <Box width={1} px={[0, 0, 1]} key={`post-name`}>
-                      <div>
-                        <h1
-                          dangerouslySetInnerHTML={{
-                            __html: post.acf.display_name
-                          }}
-                        />
-                      </div>
-                    </Box>
-                  )}
-                  {post.acf.email && (
-                    <Box width={1} px={[0, 1, 1]} key={`post-email`}>
-                      <a href={`mailto:${post.acf.email}`}>{post.acf.email}</a>
-                    </Box>
-                  )}
-                  {post.acf.website_url && (
-                    <Box width={1} px={[0, 1, 1]} key={`post-website`}>
-                      <a
-                        href={post.acf.website_url.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {post.acf.website_url.title}
-                      </a>
-                    </Box>
-                  )}
-                </Flex>
-              </Box>
-            </Flex>
             <Flex
               // mx={[0, -1, -2]}
               flexWrap="wrap"
@@ -100,11 +64,53 @@ class PostTemplate extends Component {
               py={4}
             >
               <Box width={[1, 1, 1 / 2]} px={[0, 1, 2]} key={`post-biography`}>
-                {post.acf.biography && (
-                  <div
-                    dangerouslySetInnerHTML={{ __html: post.acf.biography }}
-                  />
-                )}
+                <Flex alignItems="center">
+                  <Box width={1 / 16} px={[0, 1, 2]} css={StudentBracketParent}>
+                    <p>&#123;</p>
+                  </Box>
+                  <Box width={1} px={[0, 1, 1]}>
+                    <Flex flexWrap="wrap">
+                      {post.acf.display_name && (
+                        <Box width={1} px={[0, 0, 1]} key={`post-name`}>
+                          <div>
+                            <h1
+                              dangerouslySetInnerHTML={{
+                                __html: post.acf.display_name
+                              }}
+                            />
+                          </div>
+                        </Box>
+                      )}
+                      {post.acf.email && (
+                        <Box width={1} px={[0, 1, 1]} key={`post-email`}>
+                          <a href={`mailto:${post.acf.email}`}>
+                            {post.acf.email}
+                          </a>
+                        </Box>
+                      )}
+                      {post.acf.website_url && (
+                        <Box width={1} px={[0, 1, 1]} key={`post-website`}>
+                          <a
+                            href={post.acf.website_url.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {post.acf.website_url.title}
+                          </a>
+                        </Box>
+                      )}
+                    </Flex>
+                  </Box>
+                </Flex>
+                <Box width={1} px={[0, 1, 1]} py={4} key={`post-biography`}>
+                  {post.acf.biography && (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: post.acf.biography
+                      }}
+                    />
+                  )}
+                </Box>
               </Box>
               <Box
                 width={[1, 1, 1 / 2]}
