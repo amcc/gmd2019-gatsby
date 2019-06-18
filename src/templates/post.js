@@ -277,4 +277,3 @@ export const pageQuery = graphql`
 //   optTolerance: 0.2
 //   turdSize: 0.01
 //   turnPolicy: TURNPOLICY_MINORITY
-// }
