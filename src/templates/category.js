@@ -88,27 +88,7 @@ export const pageQuery = graphql`
             name
             slug
           }
-          acf {
-            featured_image {
-              source_url
-              localFile {
-                childImageSharp {
-                  fluid(
-                    maxWidth: 250
-                    quality: 75
-                    traceSVG: {
-                      color: "#ff5001"
-                      optTolerance: 0.2
-                      turdSize: 0.01
-                      turnPolicy: TURNPOLICY_MINORITY
-                    }
-                  ) {
-                    ...GatsbyImageSharpFluid_tracedSVG
-                  }
-                }
-              }
-            }
-          }
+          ...StudentGrid
         }
       }
     }
