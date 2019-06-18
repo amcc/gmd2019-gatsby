@@ -171,7 +171,7 @@ class PostTemplate extends Component {
                     />
                   </Box>
                 </Box>
-                <Box width={1} px={[0, 2]} key={`post-images-${i}`}>
+                <Box width={1} px={[0, 2]} py={[0,4]} key={`post-images-${i}`}>
                   {project.images_video &&
                     project.images_video.map((media, i) => {
                       if (media.vimeo_link || media.youtube_link) {
@@ -195,7 +195,7 @@ class PostTemplate extends Component {
                           return (
                             <div key={`${i} image-gallery`}>
                               <Img
-                                css={{ marginBottom: rhythm(1) }}
+                                css={{ marginBottom: rhythm(2) }}
                                 key={img.src}
                                 fluid={img}
                               />
