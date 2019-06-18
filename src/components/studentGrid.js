@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
 import { css } from "@emotion/core";
