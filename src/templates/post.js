@@ -219,13 +219,10 @@ export const pageQuery = graphql`
           localFile {
             childImageSharp {
               fluid(
-                maxWidth: 1600
-                quality: 90
+                maxWidth: 610
+                quality: 75
                 traceSVG: {
                   color: "#ff5001"
-                  optTolerance: 0.2
-                  turdSize: 0.01
-                  turnPolicy: TURNPOLICY_MINORITY
                 }
               ) {
                 ...GatsbyImageSharpFluid_tracedSVG
@@ -243,13 +240,10 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(
-                    maxWidth: 1600
-                    quality: 90
+                    maxWidth: 1400
+                    quality: 75
                     traceSVG: {
                       color: "#ff5001"
-                      optTolerance: 0.2
-                      turdSize: 0.01
-                      turnPolicy: TURNPOLICY_MINORITY
                     }
                   ) {
                     ...GatsbyImageSharpFluid_tracedSVG
@@ -269,3 +263,12 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+// save this for later:
+
+// traceSVG: {
+//   color: "#ff5001"
+//   optTolerance: 0.2
+//   turdSize: 0.01
+//   turnPolicy: TURNPOLICY_MINORITY
+// }
