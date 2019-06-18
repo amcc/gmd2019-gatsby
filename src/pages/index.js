@@ -64,7 +64,7 @@ class Home extends Component {
         <HeroContainer>
           {/* <HeroThree /> */}
           <div css={HomeVideoStyle}>
-            <HomeVideo video="gmd-salon-xix.mp4" />
+            <HomeVideo video="gmd-salon-xix-long.mp4" />
           </div>
           <div css={HomeBannerStyle}>
             <HomeBanner />
