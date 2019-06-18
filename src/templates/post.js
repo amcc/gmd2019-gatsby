@@ -28,11 +28,18 @@ export const ProjectStyle = css`
 const StudentBracket = css`
   p {
     display: none;
-    color:white;
+    color: white;
     @media (min-width: 40em) {
       display: flex;
       font-size: 8em;
     }
+  }
+`;
+
+const StudentBracketParent = css`
+  display: none;
+  @media (min-width: 40em) {
+    display: flex;
   }
 `;
 
@@ -49,10 +56,9 @@ class PostTemplate extends Component {
         </Helmet>
 
         <PostMain css={MarginTopPost}>
-          
           <PostTitleItems css={[PaddedMobile, StudentBracket]}>
             <Flex alignItems="center">
-              <Box width={1 / 16} px={[0, 1, 2]}>
+              <Box width={1 / 16} px={[0, 1, 2]} css={StudentBracketParent}>
                 <p>&#123;</p>
               </Box>
               <Box width={1} px={[0, 1, 1]}>
