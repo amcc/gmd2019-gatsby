@@ -10,7 +10,8 @@ import {
   HeaderOffsetMobile,
   PaddedMobile,
   MainWrapper,
-  GridBoxContainer
+  GridBoxContainer,
+  SubtleAccent
 } from "../utils/styles";
 
 import { rhythm } from "../utils/typography";
@@ -89,6 +90,16 @@ const Info = css`
   /* display: block; */
   color: black;
   margin-top: ${rhythm(1)};
+
+  a {
+    border-bottom: 2px solid transparent;
+    transition: 0.1s ease-in-out;
+    padding-bottom:0.3em;
+  }
+
+  a:hover {
+    border-bottom: 2px solid ${SubtleAccent};
+  }
 `;
 
 const JustifyStart = css`
@@ -134,11 +145,7 @@ const HomeBanner = ({ text }) => {
   return (
     <CustomHeroImage>
       <MainWrapper>
-        <HeroTextOverlay
-          css={css`
-            /* mix-blend-mode: difference; */
-          `}
-        >
+        <HeroTextOverlay>
           <HeroTextOverlayInner>
             <div css={homeBannerDesktop}>
               <Flex
@@ -170,7 +177,7 @@ const HomeBanner = ({ text }) => {
                 >
                   <span css={Info}>
                     <Link to={`/info`} css={{ textDecoration: `none` }}>
-                      <span css={Info}>More Info &#8594;</span>
+                      <a css={Info}>More Info &#8594;</a>
                     </Link>
                   </span>
                 </Box>
@@ -186,7 +193,7 @@ const HomeBanner = ({ text }) => {
                   </p>
                   <p>London College of Communication</p>
                   <p>Elephant &amp; Castle London SE1 6SB </p>
-                  <Link to="/info">Directions →</Link>
+                  <Link to="/info">Directions &#8594;</Link>
                 </Box>
                 <Box width={[1, 1, 1 / 4]}>
                   {/* Half width */}

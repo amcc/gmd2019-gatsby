@@ -10,10 +10,9 @@ import { SubtleAccent } from "../utils/styles";
 const FooterInner = styled.div`
   margin: 0 auto;
   max-width: 1366px;
-  padding: 1rem 1.0875rem;
+  padding: 3rem 1rem;
   background: ${SubtleAccent};
   color: white;
-  /* height: 5rem; */
   h1 {
     a {
       color: white;
@@ -22,11 +21,24 @@ const FooterInner = styled.div`
       }
     }
   }
+
+  a, p{
+    color:white;
+    letter-spacing: -0.1em;
+  }
+
+  a{
+    border-bottom: 2px solid transparent;
+    transition: 0.1s ease-in-out;
+    padding-bottom:0.3em;
+  }
+  a:hover{
+    color:black;
+    border-bottom: 2px solid black;
+  }
 `;
 
-
 const navBar = css`
-  /* float: right; */
   padding-top: 10px;
 `;
 
@@ -43,13 +55,25 @@ const Footer = ({ siteTitle }) => (
       >
         <Box width={[1,1,1 / 4]}>
           <p>
-            <Link to="/students">Students</Link>
-            <span>/</span>
-            <Link to="/info">Info</Link>
+            <Link 
+            css={css`
+            color: white;
+          ` } 
+            to="/students"><a>Students</a></Link>
+            <span> / </span>
+            <Link 
+            css={css`
+            color: white;
+          ` } 
+            to="/info"><a>Info</a></Link>
           </p>
           <p>London College of Communication</p>
           <p>Elephant &amp; Castle London SE1 6SB </p>
-          <Link to="/info">Directions →</Link>
+          <Link
+          css={css`
+          color: white;
+        ` } 
+          to="/info"><a>Directions &#8594;</a></Link>
         </Box>
         <Box width={[1,1,1 / 4]}>
           {/* Half width */}
@@ -63,7 +87,7 @@ const Footer = ({ siteTitle }) => (
         <Box width={[1,1,1 / 4]}>
           <p>General Access</p>
           <p>Thursday 20 – Saturday 22 June</p>
-          <p>Thur - Fri: 11am – 7pm Sat: 11am – 4pm</p>
+          <p>Thur - Fri: 11am – 7pm<br/> Sat: 11am – 4pm</p>
         </Box>
       </Flex>
     </FooterInner>
