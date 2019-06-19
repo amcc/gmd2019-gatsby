@@ -86,6 +86,15 @@ class Info extends Component {
               <h3>Show Teams</h3>
             </section> */}
             <section css={PaddedMobile}>
+              <h3>Website</h3>
+              <p>Melissa Berney</p>
+              <p>Carina Figueiredo</p>
+              <p>Maria Hristoforova</p>
+              <p>Benedict Povey</p>
+              <br />
+              <p>Alistair McClymont (Coordinator)</p>
+            </section>
+            <section css={PaddedMobile}>
               <h3>Photography</h3>
               <p>Emily Bowen</p>
               <p>Alice Chachka</p>
@@ -98,15 +107,6 @@ class Info extends Component {
               <p>Agathe Trouette</p>
               <br />
               <p>Maria Da Gandra (Coordinator)</p>
-            </section>
-            <section css={PaddedMobile}>
-              <h3>Website</h3>
-              <p>Melissa Berney</p>
-              <p>Carina Figueiredo</p>
-              <p>Maria Hristoforova</p>
-              <p>Benedict Povey</p>
-              <br />
-              <p>Alistair McClymont (Coordinator)</p>
             </section>
             <section css={PaddedMobile}>
               <h3>Screens</h3>
@@ -185,14 +185,8 @@ class Info extends Component {
               <p>Monica Biagioli (Coordinator)</p>
             </section>
             <section css={PaddedMobile}>
-              <p>All text (copyright) the authors.</p>
               <p>
-                Printed by Print Media Department, London College of
-                Communication — thanks to Tony Yard, Scott House and Dan
-                Fletcher
-              </p>
-              <p>
-                Set in NB International by Neubau Berlin — thanks to Stefan
+                NB International by Neubau Berlin — thanks to Stefan
                 Gandl, Neubau Berlin.
               </p>
               <p>
