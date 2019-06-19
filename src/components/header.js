@@ -189,7 +189,7 @@ const navBar = css`
 
   .sidebarMenuInner {
     margin: 0;
-    padding: 0;
+    padding: 1.4rem;
     /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
   }
   .sidebarMenuInner li {
@@ -359,6 +359,19 @@ const Header = class extends React.Component {
                     </label>
                     <div id="sidebarMenu">
                       <ul className="sidebarMenuInner">
+                      <li css={sidebarListItem}>
+                          <Link
+                            to="/"
+                            css={css`
+                              color: black;
+                              text-decoration: none;
+                            `}
+                            onClick={() => this.unCheck("sidebarToggle")}
+                            activeStyle={{ color: "#ff5001", borderBottom: "2px solid #ff5001" }}
+                          >
+                            <div css={sidebarlink}>Home</div>
+                          </Link>
+                        </li>
                         <li css={sidebarListItem}>
                           <Link
                             to="/students"
