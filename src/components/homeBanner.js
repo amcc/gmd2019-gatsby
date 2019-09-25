@@ -16,73 +16,11 @@ import {
 
 import { rhythm } from "../utils/typography";
 
-const CustomHeroImage = styled.div`
-  /* background: white;
-  height: 100vh;
-  z-index: -2;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  margin-top: -${HeaderOffsetMobile}px;
-  > div,
-  a > div {
-    height: 100vh;
-  }
-  @media (min-width: 40em) {
-    height: 100vh;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    margin-top: -${HeaderOffset}px;
-    > div,
-    a > div {
-      height: 100vh;
-    }
-  } */
-`;
+const CustomHeroImage = styled.div``;
 const HeroTextOverlay = styled.div``;
-const HeroTextOverlayInner = styled.div`
-  /* width: 100%;
-  color: white;
-  a {
-    color: white;
-  }
-  margin-top: 3vw;
-  padding: ${rhythm(1 / 2)} ${rhythm(1 / 2)} ${rhythm(1 / 2)} ${rhythm(1 / 2)};
-  font-size: 1em;
-  font-weight: 300;
-  h1 {
-    font-size: 1em;
-    color: white;
-  }
+const HeroTextOverlayInner = styled.div``;
 
-  @media (min-width: 40em) {
-    padding: ${rhythm(1 / 2)} 20vw 0 0;
-    h1 {
-      font-size: 1em;
-    }
-    h3 {
-      padding-left: 0;
-    }
-  }
-  @media (min-width: 52em) {
-    padding: ${rhythm(1 / 2)} 20vw 0 0;
-    h1 {
-      font-size: 1em;
-    }
-  }
-  @media (min-width: 64em) {
-    padding: ${rhythm(1 / 2)} 30vw 0 0;
-    h1 {
-      font-size: 1em;
-      font-weight: 300;
-    }
-  } */
-`;
-
-const HomeTitle = css`
-  /* font-weight: 400; */
-  /* text-transform: uppercase; */
-  /* text-align: center; */
-`;
+const HomeTitle = css``;
 
 const Info = css`
   font-family: "nb_internationalmono";
@@ -94,7 +32,7 @@ const Info = css`
   a {
     border-bottom: 2px solid transparent;
     transition: 0.1s ease-in-out;
-    padding-bottom:0.3em;
+    padding-bottom: 0.3em;
   }
 
   a:hover {
@@ -159,7 +97,9 @@ const HomeBanner = ({ text }) => {
                   key={`place`}
                   css={[GridBoxContainer, PaddedMobile, JustifyStart]}
                 >
-                  <span css={Info}>London College of Communication</span>
+                  <span css={Info}>
+                    BA Graphic Media Design 2019, London College of Communication
+                  </span>
                 </Box>
                 <Box
                   width={[1, 1, 1 / 3]}
@@ -167,7 +107,11 @@ const HomeBanner = ({ text }) => {
                   key={`date`}
                   css={[GridBoxContainer, PaddedMobile, JustifyCenter]}
                 >
-                  <span css={Info}>19 - 22 June</span>
+                  <span css={Info}>
+                    <p><a href="http://2018.gmdlcc.com/">goto 2018 graduating year</a></p>
+                    <p><a href="http://2017.gmdlcc.com/">goto 2017 graduating year</a></p>
+                    <p><a href="http://2016.gmdlcc.com/">goto 2016 graduating year</a></p>
+                  </span>
                 </Box>
                 <Box
                   width={[1, 1, 1 / 3]}

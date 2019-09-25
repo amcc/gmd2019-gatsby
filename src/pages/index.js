@@ -25,14 +25,15 @@ import HomeVideo from "../components/homeVideo";
 
 const HeroContainer = styled.div`
   position: relative;
-  height: 80vh;
+  /* height: 20vh; */
+  padding: 20px;
 `;
 const HomeBannerStyle = css`
-  /* margin-top: -80px; */
-  width: 100%;
-  position: absolute;
-  z-index: 10;
-  bottom: 0;
+  padding: 20px;
+  /* width: 100%; */
+  /* position: absolute; */
+  /* z-index: 10; */
+  /* bottom: 0; */
 `;
 const HomeVideoStyle = css`
   display: none;
@@ -62,10 +63,9 @@ class Home extends Component {
     return (
       <Layout>
         <HeroContainer>
-          {/* <HeroThree /> */}
-          <div css={HomeVideoStyle}>
+          {/* <div css={HomeVideoStyle}>
             <HomeVideo video="gmd-salon-xix-long.mp4" />
-          </div>
+          </div> */}
           <div css={HomeBannerStyle}>
             <HomeBanner />
           </div>
@@ -105,7 +105,7 @@ export const pageQuery = graphql`
             name
             slug
           }
-        ...StudentGrid
+          ...StudentGrid
         }
       }
     }

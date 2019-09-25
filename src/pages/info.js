@@ -35,11 +35,12 @@ class Info extends Component {
             <section css={PaddedMobile}>
               <p>
                 Final year work for Graphic Media Design students graduating in
-                2018
+                2019
               </p>
-              <h3>Private View Wednesday 19 June 6 – 9pm</h3>
-              <p>General Access Thursday 20 – Saturday 22 June</p>
-              <p>Thur - Fri: 11am – 7pm Sat: 11am – 4pm</p>
+              <p>See previous graduating years:</p>
+              <h3><a href="http://2018.gmdlcc.com/">BA Graphic Media Design 2018</a></h3>
+              <h3><a href="http://2017.gmdlcc.com/">BA Graphic Media Design 2017</a></h3>
+              <h3><a href="http://2016.gmdlcc.com/">BA Graphic Media Design 2016</a></h3>
             </section>
           </Box>
           <Box py={2} px={[0, 1, 2]} width={[1, 1 / 2, 1 / 2]}>
