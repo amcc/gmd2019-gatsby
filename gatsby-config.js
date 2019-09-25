@@ -83,6 +83,7 @@ module.exports = {
         
       }
     },
+    'gatsby-plugin-netlify-cache',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
