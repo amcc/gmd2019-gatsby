@@ -46,11 +46,11 @@ module.exports = {
          */
         // The protocol. This can be http or https.
 
-        // baseUrl: `gmdlccdummy.test`,
-        // protocol: `http`,
-        
-        baseUrl: `http://admin.gmdlcc.com`,
+        baseUrl: `gmdlccdummy.test`,
         protocol: `http`,
+        
+        // baseUrl: `http://admin.gmdlcc.com`,
+        // protocol: `http`,
         
         // auth: {
         //   htaccess_user: process.env.WP_USERNAME,
