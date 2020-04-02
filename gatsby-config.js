@@ -48,10 +48,10 @@ module.exports = {
 
         // baseUrl: `gmdlccdummy.test`,
         // protocol: `http`,
-        
+
         baseUrl: `http://admin.gmdlcc.com`,
         protocol: `http`,
-        
+
         // auth: {
         //   htaccess_user: process.env.WP_USERNAME,
         //   htaccess_pass: process.env.WP_PASSWORD,
@@ -63,9 +63,9 @@ module.exports = {
           "**/posts",
           // "**/student",
           // "**/competency",
-          "**/categories",
+          // "**/categories",
           "**/tags",
-          "**/media",
+          "**/media"
           // "**/taxonomies",
         ],
         // Blacklisted routes using glob patterns
@@ -78,12 +78,10 @@ module.exports = {
         hostingWPCOM: false,
         // If useACF is true, then the source plugin will try to import the Wordpress ACF Plugin contents.
         // This feature is untested for sites hosted on Wordpress.com
-        useACF: true,
+        useACF: true
         // verboseOutput: true,
-        
       }
     },
-    'gatsby-plugin-netlify-cache',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
@@ -99,7 +97,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.gmdlcc.com",
-        sitemap: "https://www.gmdlcc.com/sitemap.xml",
+        sitemap: "https://www.gmdlcc.com/sitemap.xml"
         // env: {
         //   development: {
         //     policy: [{ userAgent: "*", disallow: ["/"] }]
@@ -109,6 +107,7 @@ module.exports = {
         //   }
         // }
       }
-    }
+    },
+    "gatsby-plugin-netlify-cache"
   ]
 };
