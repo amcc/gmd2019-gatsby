@@ -63,7 +63,7 @@ module.exports = {
           "**/posts",
           // "**/student",
           // "**/competency",
-          // "**/categories",
+          "**/categories",
           "**/tags",
           "**/media"
           // "**/taxonomies",
