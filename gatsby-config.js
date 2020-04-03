@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `MA User Experience Design`,
+        name: `BA Graphic Media Design`,
         short_name: `GMD`,
         start_url: `/`,
         background_color: `#ffffff`,

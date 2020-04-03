@@ -29,7 +29,7 @@ const StudentBracket = css`
   p {
     display: none;
     color: white;
-    height:auto;
+    height: auto;
     @media (min-width: 40em) {
       display: flex;
       font-size: 8em;
@@ -85,7 +85,7 @@ class PostTemplate extends Component {
                       {post.acf.email && (
                         <Box width={1} px={[0, 1, 1]} key={`post-email`}>
                           {/* <a href={`mailto:${post.acf.email}`}> */}
-                            {post.acf.email}
+                          {post.acf.email}
                           {/* </a> */}
                         </Box>
                       )}
@@ -119,15 +119,16 @@ class PostTemplate extends Component {
                 key={`featured-image`}
                 py={[4, 4, 5]}
               >
-                {post.acf.featured_image && (
-                  <Img
-                    css={{ marginBottom: rhythm(1) }}
-                    key={"featured image"}
-                    fluid={
-                      post.acf.featured_image.localFile.childImageSharp.fluid
-                    }
-                  />
-                )}
+                {post.acf.featured_image &&
+                  post.acf.featured_image.localFile && (
+                    <Img
+                      css={{ marginBottom: rhythm(1) }}
+                      key={"featured image"}
+                      fluid={
+                        post.acf.featured_image.localFile.childImageSharp.fluid
+                      }
+                    />
+                  )}
               </Box>
             </Flex>
           </PostTitleItems>
@@ -171,7 +172,7 @@ class PostTemplate extends Component {
                     />
                   </Box>
                 </Box>
-                <Box width={1} px={[0, 2]} py={[0,4]} key={`post-images-${i}`}>
+                <Box width={1} px={[0, 2]} py={[0, 4]} key={`post-images-${i}`}>
                   {project.images_video &&
                     project.images_video.map((media, i) => {
                       if (media.vimeo_link || media.youtube_link) {
@@ -189,7 +190,7 @@ class PostTemplate extends Component {
                           />
                         );
                       } else if (media.project_image) {
-                        if (media.project_image.localFile.childImageSharp) {
+                        if (media.project_image.localFile) {
                           const img =
                             media.project_image.localFile.childImageSharp.fluid;
                           return (
