@@ -1,26 +1,26 @@
-import React from "react";
-import { Link } from "gatsby";
-import styled from "@emotion/styled";
+import React from "react"
+import { Link } from "gatsby"
+import styled from "@emotion/styled"
 // import { Video } from "cloudinary-react"
-import { Flex, Box } from "@rebass/grid/emotion"; //https://github.com/rebassjs/grid
+import { Flex, Box } from "@rebass/grid/emotion" //https://github.com/rebassjs/grid
 
-import { css } from "@emotion/core";
+import { css } from "@emotion/core"
 import {
   HeaderOffset,
   HeaderOffsetMobile,
   PaddedMobile,
   MainWrapper,
   GridBoxContainer,
-  SubtleAccent
-} from "../utils/styles";
+  SubtleAccent,
+} from "../utils/styles"
 
-import { rhythm } from "../utils/typography";
+import { rhythm } from "../utils/typography"
 
-const CustomHeroImage = styled.div``;
-const HeroTextOverlay = styled.div``;
-const HeroTextOverlayInner = styled.div``;
+const CustomHeroImage = styled.div``
+const HeroTextOverlay = styled.div``
+const HeroTextOverlayInner = styled.div``
 
-const HomeTitle = css``;
+const HomeTitle = css``
 
 const Info = css`
   font-family: "nb_internationalmono";
@@ -38,38 +38,38 @@ const Info = css`
   a:hover {
     border-bottom: 2px solid ${SubtleAccent};
   }
-`;
+`
 
 const JustifyStart = css`
   text-align: left;
   @media (min-width: 40em) {
     text-align: left;
   }
-`;
+`
 const JustifyCenter = css`
   text-align: left;
   @media (min-width: 40em) {
     text-align: center;
   }
-`;
+`
 const JustifyEnd = css`
   text-align: left;
   @media (min-width: 40em) {
     text-align: right;
   }
-`;
+`
 
 const navBar = css`
   /* float: right; */
   padding-top: 10px;
-`;
+`
 
 const homeBannerDesktop = css`
   display: none;
   @media (min-width: 40em) {
     display: block;
   }
-`;
+`
 
 const homeBannerMobile = css`
   display: block;
@@ -77,7 +77,7 @@ const homeBannerMobile = css`
   @media (min-width: 40em) {
     display: none;
   }
-`;
+`
 
 const HomeBanner = ({ text }) => {
   return (
@@ -98,7 +98,8 @@ const HomeBanner = ({ text }) => {
                   css={[GridBoxContainer, PaddedMobile, JustifyStart]}
                 >
                   <span css={Info}>
-                    BA Graphic Media Design 2019, London College of Communication
+                    BA Graphic Media Design 2019, London College of
+                    Communication
                   </span>
                 </Box>
                 <Box
@@ -108,9 +109,9 @@ const HomeBanner = ({ text }) => {
                   css={[GridBoxContainer, PaddedMobile, JustifyCenter]}
                 >
                   <span css={Info}>
-                    <p><a href="http://2018.gmdlcc.com/">goto 2018 graduating year</a></p>
-                    <p><a href="http://2017.gmdlcc.com/">goto 2017 graduating year</a></p>
-                    <p><a href="http://2016.gmdlcc.com/">goto 2016 graduating year</a></p>
+                    <p>
+                      <a href="https://gmdlcc.com/archive">view our archive</a>
+                    </p>
                   </span>
                 </Box>
                 <Box
@@ -159,7 +160,7 @@ const HomeBanner = ({ text }) => {
         </HeroTextOverlay>
       </MainWrapper>
     </CustomHeroImage>
-  );
-};
+  )
+}
 
-export default HomeBanner;
+export default HomeBanner

@@ -2,14 +2,14 @@
 // https://www.dajocarter.com/posts/wordpress-authentication-with-gatsby/
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
-});
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.gmdlcc.com`,
     title: `Graphic Media Design {Salon XIX}`,
-    subtitle: `Graphic Media Design {Salon XIX}`
+    subtitle: `Graphic Media Design {Salon XIX}`,
   },
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
@@ -26,14 +26,14 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `standalone`,
-        icon: `src/images/icon.png` //
-      }
+        icon: `src/images/icon.png`, //
+      },
     },
     {
       resolve: "gatsby-plugin-html-attributes",
       options: {
-        lang: "en"
-      }
+        lang: "en",
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
@@ -49,7 +49,7 @@ module.exports = {
         // baseUrl: `gmdlccdummy.test`,
         // protocol: `http`,
 
-        baseUrl: `http://admin.gmdlcc.com`,
+        baseUrl: `http://gmdlcc2019.test/`,
         protocol: `http`,
 
         // auth: {
@@ -65,7 +65,7 @@ module.exports = {
           // "**/competency",
           "**/categories",
           "**/tags",
-          "**/media"
+          "**/media",
           // "**/taxonomies",
         ],
         // Blacklisted routes using glob patterns
@@ -78,9 +78,9 @@ module.exports = {
         hostingWPCOM: false,
         // If useACF is true, then the source plugin will try to import the Wordpress ACF Plugin contents.
         // This feature is untested for sites hosted on Wordpress.com
-        useACF: true
+        useACF: true,
         // verboseOutput: true,
-      }
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -89,15 +89,15 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography.js`,
-        omitGoogleFont: true
-      }
+        omitGoogleFont: true,
+      },
     },
     `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.gmdlcc.com",
-        sitemap: "https://www.gmdlcc.com/sitemap.xml"
+        sitemap: "https://www.gmdlcc.com/sitemap.xml",
         // env: {
         //   development: {
         //     policy: [{ userAgent: "*", disallow: ["/"] }]
@@ -106,8 +106,8 @@ module.exports = {
         //     policy: [{ userAgent: "*", disallow: "/" }]
         //   }
         // }
-      }
+      },
     },
-    "gatsby-plugin-netlify-cache"
-  ]
-};
+    "gatsby-plugin-netlify-cache",
+  ],
+}
